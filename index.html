@@ -64,7 +64,7 @@
 
 </table>
 
-<!-- FAKE LOGIN SCRIPT -->
+<!-- LOGIN SCRIPT WITH SESSION STORAGE -->
 <script>
 const users = {
     "horsenoise": "Booguso!23",
@@ -77,8 +77,10 @@ document.getElementById('loginForm').addEventListener('submit', function(e){
     const p = document.getElementById('password').value;
 
     if(users[u] && users[u] === p){
+        // set loggedIn in sessionStorage
+        sessionStorage.setItem('loggedIn', 'true');
         alert("login successful! redirecting...");
-        window.location.href = "https://horsenoise.github.io/home.html"; // put your real homepage here
+        window.location.href = "home.html"; 
     } else {
         alert("invalid username or password");
     }
