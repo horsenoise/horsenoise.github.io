@@ -69,7 +69,6 @@
 
 </table>
 
-<!-- LOGIN SCRIPT -->
 <script>
 const users = {
     "horsenoise": "Booguso!23",
@@ -83,86 +82,11 @@ document.getElementById('loginForm').addEventListener('submit', function(e){
 
     if(users[u] && users[u] === p){
         sessionStorage.setItem('loggedIn', 'true');
-        alert("login successful! redirecting...");
         window.location.href = "home.html";
     } else {
         alert("invalid username or password");
         window.location.href = "https://horsenoise.github.io";
     }
-});
-</script>
-
-</body>
-</html>                <tr>
-                    <td align="center">
-                        <font face="Times New Roman, serif" size="4" color="black"><b>LOGIN TO HORSENOISE</b></font><br><br>
-                        <form id="loginForm" style="font-family: 'Times New Roman', Times, serif; font-size: 16px;">
-                            <label for="username">username:</label><br>
-                            <input type="text" id="username" style="width: 250px; padding: 5px;" required><br><br>
-                            <label for="password">password:</label><br>
-                            <input type="password" id="password" style="width: 250px; padding: 5px;" required><br><br>
-                            <input type="submit" value="login" style="font-size:16px; padding:5px 20px; background:black; color:white; border:none; cursor:pointer;">
-                        </form>
-                        <br>
-                        <font size="2" color="red">
-                            don't have an account? 
-                            <a href="mailto:horsenoise@gmail.com" style="color:red; text-decoration:none; font-family:'Times New Roman', Times, serif; font-size:12pt;">
-                                request one!
-                            </a>
-                        </font>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-
-    <tr>
-        <td height="1" bgcolor="black"></td>
-    </tr>
-
-    <tr>
-        <td align="center" height="40">
-            <font face="Times New Roman, serif" size="2" color="black">&copy; 2026 HNN</font>
-        </td>
-    </tr>
-
-</table>
-
-<!-- LOGIN SCRIPT USING SHA-256 HASHES -->
-<script>
-// SHA-256 hashes for your exact passwords
-// "Booguso!23" → horsenoise
-// "AmericaFirst!" → guest
-const users = {
-    "horsenoise": "c2b256e2262bc5f7d492364f7c1a49f345d5b5289f9f0fa4f00cbd2e5f7a170f",
-    "guest": "ffb1e0f305b0d9ce77c2b317f2f33708d75b928c6c9470c59a1810f2c161d1c5"
-};
-
-// helper functions
-function str2ab(str) {
-    return new TextEncoder().encode(str);
-}
-function ab2hex(buf) {
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
-}
-
-// login check
-document.getElementById('loginForm').addEventListener('submit', async function(e){
-    e.preventDefault();
-    const u = document.getElementById('username').value;
-    const p = document.getElementById('password').value;
-
-    if(users[u]){
-        const hashBuffer = await crypto.subtle.digest('SHA-256', str2ab(p));
-        const hashHex = ab2hex(hashBuffer);
-        if(hashHex === users[u]){
-            sessionStorage.setItem('loggedIn', 'true');
-            alert("login successful! redirecting...");
-            window.location.href = "home.html";
-            return;
-        }
-    }
-    alert("invalid username or password");
 });
 </script>
 
