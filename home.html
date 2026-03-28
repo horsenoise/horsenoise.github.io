@@ -9,10 +9,11 @@
 
 <!-- PROTECT PAGE WITH ALERT -->
 <script>
-// if not logged in, alert then redirect to login page
-if(sessionStorage.getItem('loggedIn') !== 'true'){
-    alert("please login to continue");
-    window.location.href = "https://horsenoise.github.io";
+window.onload = function() {
+    if(sessionStorage.getItem('loggedIn') !== 'true'){
+        alert("please login to continue");
+        window.location.href = "https://horsenoise.github.io";
+    }
 }
 </script>
 
