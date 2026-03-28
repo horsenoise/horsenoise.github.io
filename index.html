@@ -45,7 +45,13 @@
                             <input type="submit" value="login" style="font-size:16px; padding:5px 20px; background:black; color:white; border:none; cursor:pointer;">
                         </form>
                         <br>
-                        <font size="2" color="red">don't have an account? register here (fake)</font>
+                        <font size="2" color="red">
+                            don't have an account? 
+                            <a href="mailto:horsenoise@gmail.com?subject=HORSENOISE%20Account%20Request&body=Hello%2C%0a%0ai would like to request an account for horsenoise.%0a%0athank you." 
+                               style="color:red; text-decoration:none;">
+                                request an account
+                            </a>
+                        </font>
                     </td>
                 </tr>
             </table>
@@ -64,7 +70,7 @@
 
 </table>
 
-<!-- LOGIN SCRIPT WITH SESSION STORAGE -->
+<!-- FAKE LOGIN SCRIPT -->
 <script>
 const users = {
     "horsenoise": "Booguso!23",
@@ -77,10 +83,9 @@ document.getElementById('loginForm').addEventListener('submit', function(e){
     const p = document.getElementById('password').value;
 
     if(users[u] && users[u] === p){
-        // set loggedIn in sessionStorage
         sessionStorage.setItem('loggedIn', 'true');
         alert("login successful! redirecting...");
-        window.location.href = "home.html"; 
+        window.location.href = "home.html";
     } else {
         alert("invalid username or password");
     }
