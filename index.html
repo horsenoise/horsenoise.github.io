@@ -4,172 +4,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
-<style>
-  /* Basic Page Styles */
-  body {
-    font-family: "Times New Roman", Times, serif;
-    background-color: #ffffff;
-    color: #000000;
-    margin: 0;
-    padding: 0;
-  }
-  
-  a {
-    text-decoration: none;
-    cursor: pointer;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Header Banner - The Black Background */
-  .header-banner {
-    background-color: #000000;
-    padding: 25px 0;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  /* The Logo Text - White with Shadow */
-  .site-title {
-    font-size: 52px;
-    font-weight: 900;
-    color: #ffffff;
-    margin: 0;
-    /* This creates the heavy shadow effect */
-    text-shadow: 4px 4px 0px #444444;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-  }
-
-  /* Top Navigation Links */
-  .top-nav {
-    text-align: center;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  .top-nav a {
-    margin: 0 10px;
-    color: #000000;
-  }
-
-  /* Horizontal Rule */
-  hr {
-    border: 0;
-    border-top: 1px solid #000000;
-    margin: 10px 40px;
-  }
-
-  /* Main Layout Container (The Grid) */
-  .content-container {
-    max-width: 960px; /* Width of the Drudge Report */
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex; /* This creates the side-by-side columns */
-    gap: 40px;     /* Space between the columns */
-  }
-
-  /* Left Column (Main Stories) */
-  .left-column {
-    flex: 2; /* Takes up 2/3rds of the space */
-  }
-
-  /* Right Column (Sidebar) */
-  .right-column {
-    flex: 1; /* Takes up 1/3rd of the space */
-  }
-
-  /* Typography Classes */
-  .headline {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    line-height: 1.1;
-  }
-
-  .subhead {
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    line-height: 1.2;
-  }
-
-  /* Link Colors */
-  .red { color: #ff0000; }
-  .black { color: #000000; }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-bottom: 30px;
-    font-size: 12px;
-  }
-</style>
 </head>
-<body>
+<body bgcolor="white" text="black">
 
-  <!-- HEADER -->
-  <div class="header-banner">
-    <h1 class="site-title">horsenoise</h1>
-  </div>
-
-  <!-- NAVIGATION -->
-  <div class="top-nav">
-    <a href="#">HOME</a> | 
-    <a href="#">WORLD</a> | 
-    <a href="#">POLITICS</a> | 
-    <a href="#">BUSINESS</a> | 
-    <a href="#">TECH</a>
-  </div>
-
-  <hr>
-
-  <!-- MAIN CONTENT AREA -->
-  <div class="content-container">
+<!-- Main Container Table (Centers everything and sets width) -->
+<table width="800" align="center" border="0" cellpadding="0" cellspacing="0">
     
-    <!-- LEFT COLUMN: Main Stories -->
-    <div class="left-column">
-      <!-- Main Story -->
-      <div class="headline"><a class="red" href="#">MAIN STORY HEADLINE GOES HERE</a></div>
-      <div class="subhead"><a class="black" href="#">Secondary headline provides context</a></div>
-      <div class="subhead"><a class="black" href="#">Another sub-story related to the main topic</a></div>
-      
-      <hr>
+    <!-- LOGO SECTION -->
+    <tr>
+        <td align="center" valign="middle" height="80" bgcolor="white">
+            <!-- Using text with a shadow effect to mimic Drudge -->
+            <h1 style="font-family: 'Times New Roman', Times, serif; color: white; text-shadow: 3px 3px 0 #000000; font-size: 60px; margin: 0;">
+                HORSENOISE
+            </h1>
+        </td>
+    </tr>
 
-      <!-- More Top Stories -->
-      <div class="headline"><a class="black" href="#">TOP STORIES</a></div>
-      <div class="subhead"><a class="red" href="#">Story 1: Breaking News Update</a></div>
-      <div class="subhead"><a class="black" href="#">Story 2: Political Developments</a></div>
-      <div class="subhead"><a class="red" href="#">Story 3: Market fluctuations</a></div>
-      <div class="subhead"><a class="black" href="#">Story 4: Technology trends</a></div>
-    </div>
+    <!-- TOP NAVIGATION LINKS -->
+    <tr>
+        <td align="center" valign="middle" height="30">
+            <font face="Times New Roman, serif" size="2" color="black">
+                <b>
+                <a href="#" style="text-decoration: none; color: black;">HOME</a> | 
+                <a href="#" style="text-decoration: none; color: black;">WORLD</a> | 
+                <a href="#" style="text-decoration: none; color: black;">POLITICS</a> | 
+                <a href="#" style="text-decoration: none; color: black;">BUSINESS</a> | 
+                <a href="#" style="text-decoration: none; color: black;">TECH</a>
+                </b>
+            </font>
+        </td>
+    </tr>
 
-    <!-- RIGHT COLUMN: Sidebar -->
-    <div class="right-column">
-      <div class="subhead"><a class="red" href="#">SIDE STORY: CLICK HERE</a></div>
-      <div class="subhead"><a class="black" href="#">Opinion: Read More</a></div>
-      <div class="subhead"><a class="red" href="#">Trending Photos</a></div>
-      <div class="subhead"><a class="black" href="#">Weather Alert</a></div>
-      
-      <hr>
+    <!-- HORIZONTAL LINE -->
+    <tr>
+        <td height="1" bgcolor="black"></td>
+    </tr>
 
-      <div class="subhead"><a class="red" href="#">MUST SEE VIDEO</a></div>
-      <div class="subhead"><a class="black" href="#">Editor Picks</a></div>
-    </div>
+    <!-- MAIN CONTENT AREA (Split into 2 Columns) -->
+    <tr>
+        <td>
+            <table width="100%" border="0" cellpadding="10" cellspacing="0">
+                <tr>
+                    <!-- LEFT COLUMN (Main Headlines) - Takes up 70% of width -->
+                    <td width="70%" valign="top" align="left">
+                        <font face="Times New Roman, serif">
+                            <!-- Main Headline -->
+                            <font size="5" color="black">
+                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">MAIN STORY HEADLINE GOES HERE</a></b>
+                            </font><br><br>
+                            
+                            <!-- Secondary Headlines -->
+                            <font size="4" color="red">
+                                <a href="#" style="text-decoration: none; color: red; text-transform: uppercase;">SECONDARY STORY HEADLINE</a>
+                            </font><br>
+                            
+                            <font size="4" color="black">
+                                <a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">ANOTHER HEADLINE HERE</a>
+                            </font><br>
+                            
+                            <font size="4" color="black">
+                                <a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">YET ANOTHER HEADLINE</a>
+                            </font><br>
+                        </font>
+                    </td>
 
-  </div>
+                    <!-- RIGHT COLUMN (Side Stories) - Takes up 30% of width -->
+                    <td width="30%" valign="top" align="left" bgcolor="white">
+                        <font face="Times New Roman, serif">
+                            
+                            <!-- Top Stories Section -->
+                            <font size="3" color="black">
+                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">TOP STORIES</a></b>
+                            </font><br>
+                            <font size="2" color="red">
+                                <a href="#" style="text-decoration: none; color: red;">STORY 1 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="black">
+                                <a href="#" style="text-decoration: none; color: black;">STORY 2 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="red">
+                                <a href="#" style="text-decoration: none; color: red;">STORY 3 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="black">
+                                <a href="#" style="text-decoration: none; color: black;">STORY 4 PLACEHOLDER</a>
+                            </font><br>
+                            <br>
+                            
+                            <!-- More News Section -->
+                            <font size="3" color="black">
+                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">MORE NEWS</a></b>
+                            </font><br>
+                            <font size="2" color="red">
+                                <a href="#" style="text-decoration: none; color: red;">STORY 5 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="black">
+                                <a href="#" style="text-decoration: none; color: black;">STORY 6 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="red">
+                                <a href="#" style="text-decoration: none; color: red;">STORY 7 PLACEHOLDER</a>
+                            </font><br>
+                        </font>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
 
-  <hr>
+    <!-- HORIZONTAL LINE -->
+    <tr>
+        <td height="1" bgcolor="black"></td>
+    </tr>
 
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2026 horsenoise
-  </footer>
+    <!-- FOOTER COPYRIGHT -->
+    <tr>
+        <td align="center" height="40">
+            <font face="Times New Roman, serif" size="2" color="black">
+                &copy; 2026 horsenoise
+            </font>
+        </td>
+    </tr>
+
+</table>
 
 </body>
 </html>
