@@ -19,21 +19,20 @@
     padding: 20px;
   }
 
-  /* header with logo */
   header {
     text-align: center;
     margin-bottom: 30px;
   }
+
   header img {
-    width: 400px; /* resize logo to Drudge-style header */
+    width: 400px; /* header width */
     height: auto;
   }
 
-  /* top links */
   .top-links {
     font-size: 14px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   .top-links a {
     margin: 0 10px;
@@ -51,31 +50,27 @@
     margin: 20px 0;
   }
 
-  /* headlines */
   .headline {
     font-size: 28px;
     font-weight: bold;
     margin: 15px 0;
     text-transform: uppercase;
   }
-  .headline.red {
-    color: red; /* red for certain headlines */
-  }
+
   .subheadline {
     font-size: 18px;
     margin: 8px 0;
     text-transform: uppercase;
   }
-  .subheadline.red {
-    color: red;
-  }
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+  /* red emphasis */
   a.red {
     color: red;
+    text-decoration: none;
+  }
+  a.black {
+    color: black;
+    text-decoration: none;
   }
   a:hover {
     text-decoration: underline;
@@ -85,8 +80,7 @@
 <body>
 <div class="container">
   <header>
-    <!-- replace src with your uploaded logo file -->
-    <img src="LOGO LINK GOES HERE" alt="horsenoise logo">
+    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/temporarylogoHN.png" alt="horsenoise logo">
   </header>
 
   <div class="top-links">
@@ -99,26 +93,28 @@
 
   <hr>
 
-  <!-- main headlines -->
-  <div class="headline red"><a href="#">MAIN STORY HEADLINE</a></div>
-  <div class="subheadline"><a href="#">Secondary story headline</a></div>
-  <div class="subheadline red"><a href="#">Another headline here</a></div>
+  <!-- main headlines top to bottom -->
+  <div class="headline"><a class="red" href="#">MAIN STORY HEADLINE</a></div>
+  <div class="subheadline"><a class="black" href="#">SECONDARY STORY HEADLINE</a></div>
+  <div class="subheadline"><a class="red" href="#">ANOTHER HEADLINE HERE</a></div>
+  <div class="subheadline"><a class="black" href="#">YET ANOTHER HEADLINE</a></div>
 
   <hr>
 
-  <!-- stacked links section -->
-  <div class="headline"><a href="#">TOP STORIES</a></div>
-  <div class="subheadline"><a href="#">Story 1 placeholder</a></div>
-  <div class="subheadline red"><a href="#">Story 2 placeholder</a></div>
-  <div class="subheadline"><a href="#">Story 3 placeholder</a></div>
-  <div class="subheadline red"><a href="#">Story 4 placeholder</a></div>
+  <!-- stacked top stories -->
+  <div class="headline"><a class="black" href="#">TOP STORIES</a></div>
+  <div class="subheadline"><a class="red" href="#">STORY 1 PLACEHOLDER</a></div>
+  <div class="subheadline"><a class="black" href="#">STORY 2 PLACEHOLDER</a></div>
+  <div class="subheadline"><a class="red" href="#">STORY 3 PLACEHOLDER</a></div>
+  <div class="subheadline"><a class="black" href="#">STORY 4 PLACEHOLDER</a></div>
 
   <hr>
 
-  <div class="headline"><a href="#">MORE NEWS</a></div>
-  <div class="subheadline"><a href="#">Story 5 placeholder</a></div>
-  <div class="subheadline red"><a href="#">Story 6 placeholder</a></div>
-  <div class="subheadline"><a href="#">Story 7 placeholder</a></div>
+  <div class="headline"><a class="black" href="#">MORE NEWS</a></div>
+  <div class="subheadline"><a class="red" href="#">STORY 5 PLACEHOLDER</a></div>
+  <div class="subheadline"><a class="black" href="#">STORY 6 PLACEHOLDER</a></div>
+  <div class="subheadline"><a class="red" href="#">STORY 7 PLACEHOLDER</a></div>
+
 </div>
 </body>
 </html>
