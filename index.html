@@ -69,25 +69,41 @@
 
 </table>
 
-<!-- LOGIN SCRIPT -->
+<!-- LOGIN SCRIPT USING SHA-256 HASHES -->
 <script>
+// SHA-256 hashes of your real passwords
+// "Booguso!23" → horsenoise
+// "AmericaFirst!" → guest
 const users = {
-    "horsenoise": "Booguso!23",
-    "guest": "AmericaFirst!"
+    "horsenoise": "bcd89e466f2e5640de4cbfa4be05721d79db8bc82db4daeddb19d6c4b2cfdd27",
+    "guest": "b57c05c2923f5e4fcbe2b38e0b30c29b1c151061b23e1da6e53c008aa32c47e5"
 };
 
-document.getElementById('loginForm').addEventListener('submit', function(e){
+// helper functions
+function str2ab(str) {
+    return new TextEncoder().encode(str);
+}
+function ab2hex(buf) {
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+// login check
+document.getElementById('loginForm').addEventListener('submit', async function(e){
     e.preventDefault();
     const u = document.getElementById('username').value;
     const p = document.getElementById('password').value;
 
-    if(users[u] && users[u] === p){
-        sessionStorage.setItem('loggedIn', 'true');
-        alert("login successful! redirecting...");
-        window.location.href = "home.html";
-    } else {
-        alert("invalid username or password");
+    if(users[u]){
+        const hashBuffer = await crypto.subtle.digest('SHA-256', str2ab(p));
+        const hashHex = ab2hex(hashBuffer);
+        if(hashHex === users[u]){
+            sessionStorage.setItem('loggedIn', 'true');
+            alert("login successful! redirecting...");
+            window.location.href = "home.html";
+            return;
+        }
     }
+    alert("invalid username or password");
 });
 </script>
 
