@@ -5,85 +5,121 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
 <style>
+  /* Basic Page Styles */
   body {
-    font-family: "Times New Roman", serif;
-    background: white;
-    color: black;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #ffffff;
+    color: #000000;
     margin: 0;
     padding: 0;
   }
-
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  header img {
-    width: 400px; /* header width */
-    height: auto;
-  }
-
-  .top-links {
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .top-links a {
-    margin: 0 10px;
+  
+  a {
     text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  .top-links a:hover {
-    text-decoration: underline;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid #000;
-    margin: 20px 0;
-  }
-
-  .headline {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 15px 0;
-    text-transform: uppercase;
-  }
-
-  .subheadline {
-    font-size: 18px;
-    margin: 8px 0;
-    text-transform: uppercase;
-  }
-
-  /* red emphasis */
-  a.red {
-    color: red;
-    text-decoration: none;
-  }
-  a.black {
-    color: black;
-    text-decoration: none;
+    cursor: pointer;
   }
   a:hover {
     text-decoration: underline;
   }
+
+  /* Header Banner - The Black Background */
+  .header-banner {
+    background-color: #000000;
+    padding: 25px 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* The Logo Text - White with Shadow */
+  .site-title {
+    font-size: 52px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+    /* This creates the heavy shadow effect */
+    text-shadow: 4px 4px 0px #444444;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+
+  /* Top Navigation Links */
+  .top-nav {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .top-nav a {
+    margin: 0 10px;
+    color: #000000;
+  }
+
+  /* Horizontal Rule */
+  hr {
+    border: 0;
+    border-top: 1px solid #000000;
+    margin: 10px 40px;
+  }
+
+  /* Main Layout Container (The Grid) */
+  .content-container {
+    max-width: 960px; /* Width of the Drudge Report */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* This creates the side-by-side columns */
+    gap: 40px;     /* Space between the columns */
+  }
+
+  /* Left Column (Main Stories) */
+  .left-column {
+    flex: 2; /* Takes up 2/3rds of the space */
+  }
+
+  /* Right Column (Sidebar) */
+  .right-column {
+    flex: 1; /* Takes up 1/3rd of the space */
+  }
+
+  /* Typography Classes */
+  .headline {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .subhead {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  /* Link Colors */
+  .red { color: #ff0000; }
+  .black { color: #000000; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 30px;
+    font-size: 12px;
+  }
 </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/temporarylogoHN.png" alt="horsenoise logo">
-  </header>
 
-  <div class="top-links">
+  <!-- HEADER -->
+  <div class="header-banner">
+    <h1 class="site-title">horsenoise</h1>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="top-nav">
     <a href="#">HOME</a> | 
     <a href="#">WORLD</a> | 
     <a href="#">POLITICS</a> | 
@@ -93,28 +129,47 @@
 
   <hr>
 
-  <!-- main headlines top to bottom -->
-  <div class="headline"><a class="red" href="#">MAIN STORY HEADLINE</a></div>
-  <div class="subheadline"><a class="black" href="#">SECONDARY STORY HEADLINE</a></div>
-  <div class="subheadline"><a class="red" href="#">ANOTHER HEADLINE HERE</a></div>
-  <div class="subheadline"><a class="black" href="#">YET ANOTHER HEADLINE</a></div>
+  <!-- MAIN CONTENT AREA -->
+  <div class="content-container">
+    
+    <!-- LEFT COLUMN: Main Stories -->
+    <div class="left-column">
+      <!-- Main Story -->
+      <div class="headline"><a class="red" href="#">MAIN STORY HEADLINE GOES HERE</a></div>
+      <div class="subhead"><a class="black" href="#">Secondary headline provides context</a></div>
+      <div class="subhead"><a class="black" href="#">Another sub-story related to the main topic</a></div>
+      
+      <hr>
+
+      <!-- More Top Stories -->
+      <div class="headline"><a class="black" href="#">TOP STORIES</a></div>
+      <div class="subhead"><a class="red" href="#">Story 1: Breaking News Update</a></div>
+      <div class="subhead"><a class="black" href="#">Story 2: Political Developments</a></div>
+      <div class="subhead"><a class="red" href="#">Story 3: Market fluctuations</a></div>
+      <div class="subhead"><a class="black" href="#">Story 4: Technology trends</a></div>
+    </div>
+
+    <!-- RIGHT COLUMN: Sidebar -->
+    <div class="right-column">
+      <div class="subhead"><a class="red" href="#">SIDE STORY: CLICK HERE</a></div>
+      <div class="subhead"><a class="black" href="#">Opinion: Read More</a></div>
+      <div class="subhead"><a class="red" href="#">Trending Photos</a></div>
+      <div class="subhead"><a class="black" href="#">Weather Alert</a></div>
+      
+      <hr>
+
+      <div class="subhead"><a class="red" href="#">MUST SEE VIDEO</a></div>
+      <div class="subhead"><a class="black" href="#">Editor Picks</a></div>
+    </div>
+
+  </div>
 
   <hr>
 
-  <!-- stacked top stories -->
-  <div class="headline"><a class="black" href="#">TOP STORIES</a></div>
-  <div class="subheadline"><a class="red" href="#">STORY 1 PLACEHOLDER</a></div>
-  <div class="subheadline"><a class="black" href="#">STORY 2 PLACEHOLDER</a></div>
-  <div class="subheadline"><a class="red" href="#">STORY 3 PLACEHOLDER</a></div>
-  <div class="subheadline"><a class="black" href="#">STORY 4 PLACEHOLDER</a></div>
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 horsenoise
+  </footer>
 
-  <hr>
-
-  <div class="headline"><a class="black" href="#">MORE NEWS</a></div>
-  <div class="subheadline"><a class="red" href="#">STORY 5 PLACEHOLDER</a></div>
-  <div class="subheadline"><a class="black" href="#">STORY 6 PLACEHOLDER</a></div>
-  <div class="subheadline"><a class="red" href="#">STORY 7 PLACEHOLDER</a></div>
-
-</div>
 </body>
 </html>
