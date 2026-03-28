@@ -6,52 +6,30 @@
 <title>horsenoise</title>
 <style>
   body {
-    font-family: "Arial", sans-serif;
+    font-family: "Times New Roman", serif;
     background: white;
     color: black;
     margin: 0;
     padding: 0;
   }
 
-  /* container for the page */
   .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
   }
 
-  /* header */
+  /* header with logo */
   header {
     text-align: center;
     margin-bottom: 30px;
   }
-  header h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 0;
+  header img {
+    width: 400px; /* resize logo to Drudge-style header */
+    height: auto;
   }
 
-  /* headlines */
-  .headline {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 15px 0;
-  }
-  .subheadline {
-    font-size: 18px;
-    margin: 8px 0;
-  }
-
-  /* links */
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* small top links like drudge report */
+  /* top links */
   .top-links {
     font-size: 14px;
     text-align: center;
@@ -59,6 +37,12 @@
   }
   .top-links a {
     margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  .top-links a:hover {
+    text-decoration: underline;
   }
 
   hr {
@@ -66,43 +50,74 @@
     border-top: 1px solid #000;
     margin: 20px 0;
   }
+
+  /* headlines */
+  .headline {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+    text-transform: uppercase;
+  }
+  .headline.red {
+    color: red; /* red for certain headlines */
+  }
+  .subheadline {
+    font-size: 18px;
+    margin: 8px 0;
+    text-transform: uppercase;
+  }
+  .subheadline.red {
+    color: red;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a.red {
+    color: red;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
 <div class="container">
   <header>
-    <h1>horsenoise</h1>
+    <!-- replace src with your uploaded logo file -->
+    <img src="LOGO LINK GOES HERE" alt="horsenoise logo">
   </header>
 
   <div class="top-links">
-    <a href="#">Home</a> | 
-    <a href="#">World</a> | 
-    <a href="#">Politics</a> | 
-    <a href="#">Business</a> | 
-    <a href="#">Tech</a>
+    <a href="#">HOME</a> | 
+    <a href="#">WORLD</a> | 
+    <a href="#">POLITICS</a> | 
+    <a href="#">BUSINESS</a> | 
+    <a href="#">TECH</a>
   </div>
 
   <hr>
 
   <!-- main headlines -->
-  <div class="headline"><a href="#">MAIN STORY HEADLINE</a></div>
+  <div class="headline red"><a href="#">MAIN STORY HEADLINE</a></div>
   <div class="subheadline"><a href="#">Secondary story headline</a></div>
-  <div class="subheadline"><a href="#">Another headline here</a></div>
+  <div class="subheadline red"><a href="#">Another headline here</a></div>
 
   <hr>
 
   <!-- stacked links section -->
-  <div class="headline"><a href="#">Top Stories</a></div>
+  <div class="headline"><a href="#">TOP STORIES</a></div>
   <div class="subheadline"><a href="#">Story 1 placeholder</a></div>
-  <div class="subheadline"><a href="#">Story 2 placeholder</a></div>
+  <div class="subheadline red"><a href="#">Story 2 placeholder</a></div>
   <div class="subheadline"><a href="#">Story 3 placeholder</a></div>
-  <div class="subheadline"><a href="#">Story 4 placeholder</a></div>
+  <div class="subheadline red"><a href="#">Story 4 placeholder</a></div>
 
   <hr>
 
-  <div class="headline"><a href="#">More News</a></div>
+  <div class="headline"><a href="#">MORE NEWS</a></div>
   <div class="subheadline"><a href="#">Story 5 placeholder</a></div>
-  <div class="subheadline"><a href="#">Story 6 placeholder</a></div>
+  <div class="subheadline red"><a href="#">Story 6 placeholder</a></div>
   <div class="subheadline"><a href="#">Story 7 placeholder</a></div>
 </div>
 </body>
