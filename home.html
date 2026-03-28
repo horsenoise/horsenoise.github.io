@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
+
+<!-- LOGIN CHECK SCRIPT -->
+<script>
+if (!sessionStorage.getItem('loggedIn')) {
+    alert("please login first");
+    window.location.href = "index.html";
+}
+</script>
+
 </head>
 <body bgcolor="white" text="black">
 
