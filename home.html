@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
+<style>
+/* hover effect for logout link */
+.logout-link {
+    color: red;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt; /* normal size */
+    transition: font-size 0.2s;
+}
+.logout-link:hover {
+    font-size: 14pt; /* grows slightly on hover */
+}
+</style>
 </head>
 <body bgcolor="white" text="black">
 
@@ -19,7 +32,7 @@ window.onload = function() {
 
 <!-- LOGOUT LINK TOP-RIGHT -->
 <div style="width:800px; margin:auto; text-align:right; padding:10px;">
-    <a href="#" id="logoutLink" style="font-family:'Times New Roman', Times, serif; font-size:12pt; color:red; text-decoration:none;">logout</a>
+    <a href="#" id="logoutLink" class="logout-link">logout</a>
 </div>
 
 <script>
