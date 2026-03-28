@@ -20,6 +20,20 @@
 </head>
 <body bgcolor="white" text="black">
 
+<!-- TOP LEFT X LOGO (fixed with hover grow) -->
+<a href="https://x.com/thishorsenoise" target="_blank" id="xLogo" style="
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    display: inline-block;
+    transition: transform 0.2s; /* smooth grow */
+">
+    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" 
+         alt="X Logo" 
+         style="height:28px; width:auto;">
+</a>
+
 <!-- PROTECT PAGE WITH ALERT -->
 <script>
 window.onload = function() {
@@ -41,6 +55,15 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
     e.preventDefault();
     sessionStorage.removeItem('loggedIn');
     window.location.href = "https://horsenoise.github.io";
+});
+
+// hover grow effect for X logo
+const xLogo = document.getElementById('xLogo');
+xLogo.addEventListener('mouseover', () => {
+    xLogo.style.transform = 'scale(1.2)';
+});
+xLogo.addEventListener('mouseout', () => {
+    xLogo.style.transform = 'scale(1)';
 });
 </script>
 
