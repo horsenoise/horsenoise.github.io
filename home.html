@@ -3,54 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>horsenoise login</title>
+<title>horsenoise</title>
+
+<!-- LOGIN CHECK SCRIPT -->
+<script>
+// redirect if not logged in
+if (!sessionStorage.getItem('loggedIn')) {
+    alert("please login first");
+    window.location.href = "https://horsenoise.github.io/";
+}
+</script>
+
 </head>
 <body bgcolor="white" text="black">
 
+<!-- LOGOUT LINK -->
+<div style="width:800px; margin:auto; text-align:right; padding:10px 0; font-family: 'Times New Roman', Times, serif;">
+    <span id="logoutBtn" style="cursor:pointer; color:black; font-size:14px; text-decoration:none;">
+        logout
+    </span>
+</div>
+
+<script>
+// logout link functionality
+document.getElementById('logoutBtn').addEventListener('mouseover', function() {
+    this.style.color = 'red';
+});
+document.getElementById('logoutBtn').addEventListener('mouseout', function() {
+    this.style.color = 'black';
+});
+document.getElementById('logoutBtn').addEventListener('click', function() {
+    sessionStorage.removeItem('loggedIn'); // clear sessionStorage
+    alert("you have been logged out");
+    window.location.href = "https://horsenoise.github.io/";
+});
+</script>
+
+<!-- Main Container Table (Centers everything and sets width) -->
 <table width="800" align="center" border="0" cellpadding="0" cellspacing="0">
     
-    <!-- LOGO -->
+    <!-- LOGO IMAGE ROW -->
     <tr>
-        <td align="center" height="100">
+        <td align="center" valign="middle" height="100" bgcolor="white">
+            <!-- LOGO GOES HERE -->
             <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" alt="HORSENOISE Logo" style="max-height: 240px;">
         </td>
     </tr>
 
     <!-- HORSENOISE TEXT -->
     <tr>
-        <td align="center" height="80">
+        <td align="center" valign="middle" height="80" bgcolor="white">
             <h1 style="font-family: 'Times New Roman', Times, serif; color: black; text-shadow: 3px 3px 0 #888888; font-size: 60px; margin: 0;">
                 HORSENOISE
             </h1>
         </td>
     </tr>
 
-    <!-- LINE -->
+    <!-- TOP NAVIGATION LINKS -->
+    <tr>
+        <td align="center" valign="middle" height="30">
+            <font face="Times New Roman, serif" size="2" color="black">
+                <b>
+                <a href="#" style="text-decoration: none; color: black;">HOME</a> | 
+                <a href="#" style="text-decoration: none; color: black;">WORLD</a> | 
+                <a href="#" style="text-decoration: none; color: black;">POLITICS</a> | 
+                <a href="#" style="text-decoration: none; color: black;">BUSINESS</a> | 
+                <a href="#" style="text-decoration: none; color: black;">TECH</a>
+                </b>
+            </font>
+        </td>
+    </tr>
+
+    <!-- HORIZONTAL LINE -->
     <tr>
         <td height="1" bgcolor="black"></td>
     </tr>
 
-    <!-- LOGIN FORM -->
+    <!-- MAIN CONTENT AREA (Split into 2 Columns) -->
     <tr>
         <td>
-            <table width="100%" cellpadding="20">
+            <table width="100%" border="0" cellpadding="10" cellspacing="0">
                 <tr>
-                    <td align="center">
-                        <font face="Times New Roman, serif" size="4" color="black"><b>LOGIN TO HORSENOISE</b></font><br><br>
-                        <form id="loginForm" style="font-family: 'Times New Roman', Times, serif; font-size: 16px;">
-                            <label for="username">username:</label><br>
-                            <input type="text" id="username" style="width: 250px; padding: 5px;" required><br><br>
-                            <label for="password">password:</label><br>
-                            <input type="password" id="password" style="width: 250px; padding: 5px;" required><br><br>
-                            <input type="submit" value="login" style="font-size:16px; padding:5px 20px; background:black; color:white; border:none; cursor:pointer;">
-                        </form>
-                        <br>
-                        <font size="2" color="red">
-                            don't have an account? 
-                            <a href="mailto:horsenoise@gmail.com?subject=HORSENOISE%20Account%20Request&body=Hello%2C%0a%0ai would like to request an account for horsenoise.%0a%0athank you." 
-                               style="color:red; text-decoration:none;">
-                                request an account
-                            </a>
+                    <!-- LEFT COLUMN (Main Headlines) - Takes up 70% of width -->
+                    <td width="70%" valign="top" align="left">
+                        <font face="Times New Roman, serif">
+                            <!-- Main Headline -->
+                            <font size="5" color="black">
+                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">MAIN STORY HEADLINE GOES HERE</a></b>
+                            </font><br><br>
+                            
+                            <!-- Secondary Headlines -->
+                            <font size="4" color="red">
+                                <a href="#" style="text-decoration: none; color: red; text-transform: uppercase;">SECONDARY STORY HEADLINE</a>
+                            </font><br>
+                            
+                            <font size="4" color="black">
+                                <a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">ANOTHER HEADLINE HERE</a>
+                            </font><br>
+                            
+                            <font size="4" color="black">
+                                <a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">YET ANOTHER HEADLINE</a>
+                            </font><br>
+                        </font>
+                    </td>
+
+                    <!-- RIGHT COLUMN (Side Stories) - Takes up 30% of width -->
+                    <td width="30%" valign="top" align="left" bgcolor="white">
+                        <font face="Times New Roman, serif">
+                            
+                            <!-- Top Stories Section -->
+                            <font size="3" color="black">
+                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">TOP STORIES</a></b>
+                            </font><br>
+                            <font size="2" color="red">
+                                <a href="#" style="text-decoration: none; color: red;">STORY 1 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="black">
+                                <a href="#" style="text-decoration: none; color: black;">STORY 2 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="red">
+                                <a href="#" style="text-decoration: none; color: red;">STORY 3 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="black">
+                                <a href="#" style="text-decoration: none; color: black;">STORY 4 PLACEHOLDER</a>
+                            </font><br>
+                            <br>
+                            
+                            <!-- More News Section -->
+                            <font size="3" color="black">
+                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">MORE NEWS</a></b>
+                            </font><br>
+                            <font size="2" color="red">
+                                <a href="#" style="text-decoration: none; color: red;">STORY 5 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="black">
+                                <a href="#" style="text-decoration: none; color: black;">STORY 6 PLACEHOLDER</a>
+                            </font><br>
+                            <font size="2" color="red">
+                                <a href="#" style="text-decoration: none; color: red;">STORY 7 PLACEHOLDER</a>
+                            </font><br>
                         </font>
                     </td>
                 </tr>
@@ -58,39 +149,21 @@
         </td>
     </tr>
 
+    <!-- HORIZONTAL LINE -->
     <tr>
         <td height="1" bgcolor="black"></td>
     </tr>
 
+    <!-- FOOTER COPYRIGHT -->
     <tr>
         <td align="center" height="40">
-            <font face="Times New Roman, serif" size="2" color="black">&copy; 2026 horsenoise</font>
+            <font face="Times New Roman, serif" size="2" color="black">
+                &copy; 2026 horsenoise
+            </font>
         </td>
     </tr>
 
 </table>
-
-<!-- FAKE LOGIN SCRIPT -->
-<script>
-const users = {
-    "horsenoise": "Booguso!23",
-    "guest": "AmericaFirst!"
-};
-
-document.getElementById('loginForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const u = document.getElementById('username').value;
-    const p = document.getElementById('password').value;
-
-    if(users[u] && users[u] === p){
-        sessionStorage.setItem('loggedIn', 'true');
-        alert("login successful! redirecting...");
-        window.location.href = "home.html";
-    } else {
-        alert("invalid username or password");
-    }
-});
-</script>
 
 </body>
 </html>
