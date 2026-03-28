@@ -5,36 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
 <style>
-/* hover effect for logout link */
+/* logout link hover effect */
 .logout-link {
     color: red;
     text-decoration: none;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 12pt; /* normal size */
+    font-size: 12pt;
     transition: font-size 0.2s;
 }
 .logout-link:hover {
-    font-size: 14pt; /* grows slightly on hover */
+    font-size: 14pt;
 }
-</style>
-</head>
-<body bgcolor="white" text="black">
 
-<!-- TOP LEFT X LOGO (fixed with hover grow) -->
-<a href="https://x.com/thishorsenoise" target="_blank" id="xLogo" style="
+/* x logo hover effect */
+#xLogo {
     position: fixed;
     top: 10px;
     left: 10px;
     z-index: 9999;
     display: inline-block;
-    transition: transform 0.2s; /* smooth grow */
-">
+    transition: transform 0.2s;
+}
+#xLogo:hover {
+    transform: scale(1.2);
+}
+
+/* general font for links */
+a {
+    text-decoration: none;
+    color: black;
+}
+</style>
+</head>
+<body bgcolor="white" text="black">
+
+<!-- TOP LEFT X LOGO -->
+<a href="https://x.com/thishorsenoise" target="_blank" id="xLogo">
     <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" 
-         alt="X Logo" 
-         style="height:28px; width:auto;">
+         alt="X Logo" style="height:28px; width:auto;">
 </a>
 
-<!-- PROTECT PAGE WITH ALERT -->
+<!-- PROTECT PAGE -->
 <script>
 window.onload = function() {
     if(sessionStorage.getItem('loggedIn') !== 'true'){
@@ -44,7 +55,7 @@ window.onload = function() {
 }
 </script>
 
-<!-- LOGOUT LINK TOP-RIGHT -->
+<!-- LOGOUT LINK -->
 <div style="width:800px; margin:auto; text-align:right; padding:10px;">
     <a href="#" id="logoutLink" class="logout-link">logout</a>
 </div>
@@ -56,24 +67,16 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
     sessionStorage.removeItem('loggedIn');
     window.location.href = "https://horsenoise.github.io";
 });
-
-// hover grow effect for X logo
-const xLogo = document.getElementById('xLogo');
-xLogo.addEventListener('mouseover', () => {
-    xLogo.style.transform = 'scale(1.2)';
-});
-xLogo.addEventListener('mouseout', () => {
-    xLogo.style.transform = 'scale(1)';
-});
 </script>
 
-<!-- Main Container Table -->
+<!-- MAIN TABLE -->
 <table width="800" align="center" border="0" cellpadding="0" cellspacing="0">
-    
-    <!-- LOGO IMAGE ROW -->
+
+    <!-- LOGO IMAGE -->
     <tr>
         <td align="center" valign="middle" height="100" bgcolor="white">
-            <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" alt="HORSENOISE Logo" style="max-height: 240px;">
+            <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" 
+                 alt="HORSENOISE Logo" style="max-height:240px;">
         </td>
     </tr>
 
@@ -95,18 +98,16 @@ xLogo.addEventListener('mouseout', () => {
         </td>
     </tr>
 
-    <!-- TOP NAVIGATION LINKS -->
+    <!-- TOP NAV LINKS -->
     <tr>
         <td align="center" valign="middle" height="30">
-            <font face="Times New Roman, serif" size="2" color="black">
-                <b>
-                <a href="#" style="text-decoration: none; color: black;">HOME</a> | 
-                <a href="#" style="text-decoration: none; color: black;">WORLD</a> | 
-                <a href="#" style="text-decoration: none; color: black;">POLITICS</a> | 
-                <a href="#" style="text-decoration: none; color: black;">BUSINESS</a> | 
-                <a href="#" style="text-decoration: none; color: black;">TECH</a>
-                </b>
-            </font>
+            <b>
+                <a href="#">HOME</a> | 
+                <a href="#">WORLD</a> | 
+                <a href="#">POLITICS</a> | 
+                <a href="#">BUSINESS</a> | 
+                <a href="#">TECH</a>
+            </b>
         </td>
     </tr>
 
@@ -115,63 +116,44 @@ xLogo.addEventListener('mouseout', () => {
         <td height="1" bgcolor="black"></td>
     </tr>
 
-    <!-- MAIN CONTENT AREA (Split into 2 Columns) -->
+    <!-- MAIN CONTENT -->
     <tr>
         <td>
             <table width="100%" border="0" cellpadding="10" cellspacing="0">
                 <tr>
                     <!-- LEFT COLUMN -->
                     <td width="70%" valign="top" align="left">
-                        <font face="Times New Roman, serif">
-                            <font size="5" color="black">
-                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">Nick Fuentes’s Strategy is Working</a></b>
-                            </font><br><img src="<a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/">
-    <img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" alt="the atlantic NF image" width="300" height="200">
-</a>" alt="description of image" width="300" height="200"><br>
-                            <font size="4" color="red">
-                                <a href="#" style="text-decoration: none; color: red; text-transform: uppercase;">SECONDARY STORY HEADLINE</a>
-                            </font><br>
-                            <font size="4" color="black">
-                                <a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">ANOTHER HEADLINE HERE</a>
-                            </font><br>
-                            <font size="4" color="black">
-                                <a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">YET ANOTHER HEADLINE</a>
-                            </font><br>
-                        </font>
+                        <b style="font-size:16pt; color:black; font-family:'Times New Roman', serif;">
+                            <a href="#">Nick Fuentes’s Strategy is Working</a>
+                        </b><br>
+                        <a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/" target="_blank">
+                            <img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" 
+                                 alt="the atlantic NF image" width="300" height="200">
+                        </a><br>
+                        <b style="font-size:14pt; color:red;">
+                            <a href="#">SECONDARY STORY HEADLINE</a>
+                        </b><br>
+                        <b style="font-size:14pt; color:black;">
+                            <a href="#">ANOTHER HEADLINE HERE</a>
+                        </b><br>
+                        <b style="font-size:14pt; color:black;">
+                            <a href="#">YET ANOTHER HEADLINE</a>
+                        </b>
                     </td>
 
                     <!-- RIGHT COLUMN -->
                     <td width="30%" valign="top" align="left" bgcolor="white">
-                        <font face="Times New Roman, serif">
-                            <font size="3" color="black">
-                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">TOP STORIES</a></b>
-                            </font><br>
-                            <font size="2" color="red">
-                                <a href="#" style="text-decoration: none; color: red;">STORY 1 PLACEHOLDER</a>
-                            </font><br>
-                            <font size="2" color="black">
-                                <a href="#" style="text-decoration: none; color: black;">STORY 2 PLACEHOLDER</a>
-                            </font><br>
-                            <font size="2" color="red">
-                                <a href="#" style="text-decoration: none; color: red;">STORY 3 PLACEHOLDER</a>
-                            </font><br>
-                            <font size="2" color="black">
-                                <a href="#" style="text-decoration: none; color: black;">STORY 4 PLACEHOLDER</a>
-                            </font><br>
-                            <br>
-                            <font size="3" color="black">
-                                <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">MORE NEWS</a></b>
-                            </font><br>
-                            <font size="2" color="red">
-                                <a href="#" style="text-decoration: none; color: red;">STORY 5 PLACEHOLDER</a>
-                            </font><br>
-                            <font size="2" color="black">
-                                <a href="#" style="text-decoration: none; color: black;">STORY 6 PLACEHOLDER</a>
-                            </font><br>
-                            <font size="2" color="red">
-                                <a href="#" style="text-decoration: none; color: red;">STORY 7 PLACEHOLDER</a>
-                            </font><br>
-                        </font>
+                        <b style="font-size:14pt; color:black;">
+                            <a href="#">TOP STORIES</a>
+                        </b><br>
+                        <span style="color:red;"><a href="#">STORY 1 PLACEHOLDER</a></span><br>
+                        <span style="color:black;"><a href="#">STORY 2 PLACEHOLDER</a></span><br>
+                        <span style="color:red;"><a href="#">STORY 3 PLACEHOLDER</a></span><br>
+                        <span style="color:black;"><a href="#">STORY 4 PLACEHOLDER</a></span><br><br>
+                        <b style="font-size:14pt; color:black;"><a href="#">MORE NEWS</a></b><br>
+                        <span style="color:red;"><a href="#">STORY 5 PLACEHOLDER</a></span><br>
+                        <span style="color:black;"><a href="#">STORY 6 PLACEHOLDER</a></span><br>
+                        <span style="color:red;"><a href="#">STORY 7 PLACEHOLDER</a></span>
                     </td>
                 </tr>
             </table>
@@ -183,12 +165,12 @@ xLogo.addEventListener('mouseout', () => {
         <td height="1" bgcolor="black"></td>
     </tr>
 
-    <!-- FOOTER COPYRIGHT -->
+    <!-- FOOTER -->
     <tr>
         <td align="center" height="40">
-            <font face="Times New Roman, serif" size="2" color="black">
+            <span style="font-family:'Times New Roman', serif; font-size:10pt; color:black;">
                 &copy; 2026 HNN
-            </font>
+            </span>
         </td>
     </tr>
 
