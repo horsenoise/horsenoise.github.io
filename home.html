@@ -7,10 +7,11 @@
 </head>
 <body bgcolor="white" text="black">
 
-<!-- PROTECT PAGE -->
+<!-- PROTECT PAGE WITH ALERT -->
 <script>
-// if not logged in, redirect to login page
+// if not logged in, alert then redirect to login page
 if(sessionStorage.getItem('loggedIn') !== 'true'){
+    alert("please login to continue");
     window.location.href = "https://horsenoise.github.io";
 }
 </script>
