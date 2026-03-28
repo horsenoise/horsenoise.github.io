@@ -4,39 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
-
-<!-- LOGIN CHECK SCRIPT -->
-<script>
-// redirect if not logged in
-if (!sessionStorage.getItem('loggedIn')) {
-    alert("please login first");
-    window.location.href = "https://horsenoise.github.io/";
-}
-</script>
-
 </head>
 <body bgcolor="white" text="black">
 
-<!-- LOGOUT LINK -->
-<div style="width:800px; margin:auto; text-align:right; padding:10px 0; font-family: 'Times New Roman', Times, serif;">
-    <span id="logoutBtn" style="cursor:pointer; color:black; font-size:14px; text-decoration:none;">
-        logout
-    </span>
-</div>
-
 <script>
-// logout link functionality
-document.getElementById('logoutBtn').addEventListener('mouseover', function() {
-    this.style.color = 'red';
-});
-document.getElementById('logoutBtn').addEventListener('mouseout', function() {
-    this.style.color = 'black';
-});
-document.getElementById('logoutBtn').addEventListener('click', function() {
-    sessionStorage.removeItem('loggedIn'); // clear sessionStorage
-    alert("you have been logged out");
-    window.location.href = "https://horsenoise.github.io/";
-});
+// check if user is logged in
+if(sessionStorage.getItem('loggedIn') !== 'true'){
+    window.location.href = "https://horsenoise.github.io";
+}
 </script>
 
 <!-- Main Container Table (Centers everything and sets width) -->
@@ -45,7 +20,6 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
     <!-- LOGO IMAGE ROW -->
     <tr>
         <td align="center" valign="middle" height="100" bgcolor="white">
-            <!-- LOGO GOES HERE -->
             <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" alt="HORSENOISE Logo" style="max-height: 240px;">
         </td>
     </tr>
@@ -84,34 +58,27 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
         <td>
             <table width="100%" border="0" cellpadding="10" cellspacing="0">
                 <tr>
-                    <!-- LEFT COLUMN (Main Headlines) - Takes up 70% of width -->
+                    <!-- LEFT COLUMN (Main Headlines) -->
                     <td width="70%" valign="top" align="left">
                         <font face="Times New Roman, serif">
-                            <!-- Main Headline -->
                             <font size="5" color="black">
                                 <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">MAIN STORY HEADLINE GOES HERE</a></b>
                             </font><br><br>
-                            
-                            <!-- Secondary Headlines -->
                             <font size="4" color="red">
                                 <a href="#" style="text-decoration: none; color: red; text-transform: uppercase;">SECONDARY STORY HEADLINE</a>
                             </font><br>
-                            
                             <font size="4" color="black">
                                 <a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">ANOTHER HEADLINE HERE</a>
                             </font><br>
-                            
                             <font size="4" color="black">
                                 <a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">YET ANOTHER HEADLINE</a>
                             </font><br>
                         </font>
                     </td>
 
-                    <!-- RIGHT COLUMN (Side Stories) - Takes up 30% of width -->
+                    <!-- RIGHT COLUMN (Side Stories) -->
                     <td width="30%" valign="top" align="left" bgcolor="white">
                         <font face="Times New Roman, serif">
-                            
-                            <!-- Top Stories Section -->
                             <font size="3" color="black">
                                 <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">TOP STORIES</a></b>
                             </font><br>
@@ -128,8 +95,6 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
                                 <a href="#" style="text-decoration: none; color: black;">STORY 4 PLACEHOLDER</a>
                             </font><br>
                             <br>
-                            
-                            <!-- More News Section -->
                             <font size="3" color="black">
                                 <b><a href="#" style="text-decoration: none; color: black; text-transform: uppercase;">MORE NEWS</a></b>
                             </font><br>
