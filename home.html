@@ -16,13 +16,21 @@ if (!sessionStorage.getItem('loggedIn')) {
 </head>
 <body bgcolor="white" text="black">
 
-<!-- LOGOUT BUTTON -->
-<div style="width:800px; margin:auto; text-align:right; padding:10px 0;">
-    <button id="logoutBtn" style="font-family: 'Times New Roman', Times, serif; padding:5px 10px; cursor:pointer;">Logout</button>
+<!-- LOGOUT LINK -->
+<div style="width:800px; margin:auto; text-align:right; padding:10px 0; font-family: 'Times New Roman', Times, serif;">
+    <span id="logoutBtn" style="cursor:pointer; color:black; font-size:14px; text-decoration:none;">
+        logout
+    </span>
 </div>
 
 <script>
-// logout button functionality
+// logout link functionality
+document.getElementById('logoutBtn').addEventListener('mouseover', function() {
+    this.style.color = 'red';
+});
+document.getElementById('logoutBtn').addEventListener('mouseout', function() {
+    this.style.color = 'black';
+});
 document.getElementById('logoutBtn').addEventListener('click', function() {
     sessionStorage.removeItem('loggedIn'); // clear sessionStorage
     alert("you have been logged out");
