@@ -7,12 +7,29 @@
 </head>
 <body bgcolor="white" text="black">
 
+<!-- PROTECT PAGE -->
 <script>
+// if not logged in, redirect to login page
 if(sessionStorage.getItem('loggedIn') !== 'true'){
     window.location.href = "https://horsenoise.github.io";
 }
 </script>
 
+<!-- LOGOUT LINK TOP-RIGHT -->
+<div style="width:800px; margin:auto; text-align:right; padding:10px;">
+    <a href="#" id="logoutLink" style="font-family:'Times New Roman', Times, serif; font-size:12pt; color:red; text-decoration:none;">logout</a>
+</div>
+
+<script>
+// logout function
+document.getElementById('logoutLink').addEventListener('click', function(e){
+    e.preventDefault();
+    sessionStorage.removeItem('loggedIn');
+    window.location.href = "https://horsenoise.github.io";
+});
+</script>
+
+<!-- Main Container Table -->
 <table width="800" align="center" border="0" cellpadding="0" cellspacing="0">
     
     <!-- LOGO IMAGE ROW -->
@@ -46,15 +63,17 @@ if(sessionStorage.getItem('loggedIn') !== 'true'){
         </td>
     </tr>
 
+    <!-- HORIZONTAL LINE -->
     <tr>
         <td height="1" bgcolor="black"></td>
     </tr>
 
-    <!-- MAIN CONTENT AREA -->
+    <!-- MAIN CONTENT AREA (Split into 2 Columns) -->
     <tr>
         <td>
             <table width="100%" border="0" cellpadding="10" cellspacing="0">
                 <tr>
+                    <!-- LEFT COLUMN -->
                     <td width="70%" valign="top" align="left">
                         <font face="Times New Roman, serif">
                             <font size="5" color="black">
@@ -72,6 +91,7 @@ if(sessionStorage.getItem('loggedIn') !== 'true'){
                         </font>
                     </td>
 
+                    <!-- RIGHT COLUMN -->
                     <td width="30%" valign="top" align="left" bgcolor="white">
                         <font face="Times New Roman, serif">
                             <font size="3" color="black">
@@ -109,13 +129,17 @@ if(sessionStorage.getItem('loggedIn') !== 'true'){
         </td>
     </tr>
 
+    <!-- HORIZONTAL LINE -->
     <tr>
         <td height="1" bgcolor="black"></td>
     </tr>
 
+    <!-- FOOTER COPYRIGHT -->
     <tr>
         <td align="center" height="40">
-            <font face="Times New Roman, serif" size="2" color="black">&copy; 2026 HNN</font>
+            <font face="Times New Roman, serif" size="2" color="black">
+                &copy; 2026 HNN
+            </font>
         </td>
     </tr>
 
