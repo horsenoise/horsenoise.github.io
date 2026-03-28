@@ -1,93 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>DRUDGE STYLE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>horsenoise news</title>
+<style>
+  body {
+    font-family: "Arial", sans-serif;
+    background: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* container for the page */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* header */
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  /* headlines */
+  .headline {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+  }
+  .subheadline {
+    font-size: 18px;
+    margin: 8px 0;
+  }
+
+  /* links */
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* small top links like drudge report */
+  .top-links {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .top-links a {
+    margin: 0 10px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 20px 0;
+  }
+</style>
 </head>
+<body>
+<div class="container">
+  <header>
+    <h1>horsenoise</h1>
+  </header>
 
-<body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080">
+  <div class="top-links">
+    <a href="#">Home</a> | 
+    <a href="#">World</a> | 
+    <a href="#">Politics</a> | 
+    <a href="#">Business</a> | 
+    <a href="#">Tech</a>
+  </div>
 
-<center>
+  <hr>
 
-    <!-- top logo/title -->
-    <font size="7" face="Times New Roman">
-        <b>MY NEWS SITE</b>
-    </font>
+  <!-- main headlines -->
+  <div class="headline"><a href="#">MAIN STORY HEADLINE</a></div>
+  <div class="subheadline"><a href="#">Secondary story headline</a></div>
+  <div class="subheadline"><a href="#">Another headline here</a></div>
 
-    <br>
+  <hr>
 
-    <font size="2">
-        <b>MONDAY MARCH 28, 2026</b><br>
-        UPDATED 10:32 AM ET
-    </font>
+  <!-- stacked links section -->
+  <div class="headline"><a href="#">Top Stories</a></div>
+  <div class="subheadline"><a href="#">Story 1 placeholder</a></div>
+  <div class="subheadline"><a href="#">Story 2 placeholder</a></div>
+  <div class="subheadline"><a href="#">Story 3 placeholder</a></div>
+  <div class="subheadline"><a href="#">Story 4 placeholder</a></div>
 
-    <hr width="600">
+  <hr>
 
-    <!-- MAIN HEADLINE -->
-    <font size="5" face="Times New Roman">
-        <b>
-            <a href="#">MAJOR BREAKING HEADLINE GOES HERE</a>
-        </b>
-    </font>
-
-    <br><br>
-
-    <!-- sub headlines -->
-    <font size="3">
-        <b>
-            <a href="#">Secondary story line one</a><br>
-            <a href="#">Another developing situation</a><br>
-            <a href="#">Something else happening now</a>
-        </b>
-    </font>
-
-    <br><br>
-
-    <table width="600" cellpadding="4">
-        <tr>
-            <!-- LEFT COLUMN -->
-            <td width="50%" valign="top">
-
-                <font size="3">
-                    <b>• <a href="#">Story link left 1</a></b><br>
-                    <b>• <a href="#">Story link left 2</a></b><br>
-                    <b>• <a href="#">Story link left 3</a></b><br>
-                    <b>• <a href="#">Story link left 4</a></b><br>
-                    <b>• <a href="#">Story link left 5</a></b><br>
-                </font>
-
-            </td>
-
-            <!-- RIGHT COLUMN -->
-            <td width="50%" valign="top">
-
-                <font size="3">
-                    <b>• <a href="#">Story link right 1</a></b><br>
-                    <b>• <a href="#">Story link right 2</a></b><br>
-                    <b>• <a href="#">Story link right 3</a></b><br>
-                    <b>• <a href="#">Story link right 4</a></b><br>
-                    <b>• <a href="#">Story link right 5</a></b><br>
-                </font>
-
-            </td>
-        </tr>
-    </table>
-
-    <br>
-
-    <!-- bottom links -->
-    <font size="2">
-        <a href="#">Link One</a> |
-        <a href="#">Link Two</a> |
-        <a href="#">Link Three</a>
-    </font>
-
-    <br><br>
-
-    <font size="1">
-        © 2026 My Site
-    </font>
-
-</center>
-
+  <div class="headline"><a href="#">More News</a></div>
+  <div class="subheadline"><a href="#">Story 5 placeholder</a></div>
+  <div class="subheadline"><a href="#">Story 6 placeholder</a></div>
+  <div class="subheadline"><a href="#">Story 7 placeholder</a></div>
+</div>
 </body>
 </html>
