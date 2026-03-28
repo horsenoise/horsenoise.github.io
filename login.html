@@ -82,8 +82,8 @@
 <!-- FAKE LOGIN SCRIPT -->
 <script>
 const users = {
-    "blake": "test123",
-    "guest": "password"
+    "horsenoise": "Booguso!23",
+    "guest": "AmericaFirst!"
 };
 
 document.getElementById('loginForm').addEventListener('submit', function(e){
@@ -93,7 +93,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e){
 
     if(users[u] && users[u] === p){
         alert("login successful! redirecting...");
-        window.location.href = "home.html"; // put your real homepage here
+        window.location.href = "https://horsenoise.github.io/"; // put your real homepage here
     } else {
         alert("invalid username or password");
     }
