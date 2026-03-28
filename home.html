@@ -5,11 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
 <style>
-/* logout link hover effect */
+/* global font */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+/* logout link hover */
 .logout-link {
     color: red;
     text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 12pt;
     transition: font-size 0.2s;
 }
@@ -17,7 +24,7 @@
     font-size: 14pt;
 }
 
-/* x logo hover effect */
+/* x logo hover */
 #xLogo {
     position: fixed;
     top: 10px;
@@ -30,14 +37,13 @@
     transform: scale(1.2);
 }
 
-/* general font for links */
+/* link styling */
 a {
     text-decoration: none;
-    color: black;
 }
 </style>
 </head>
-<body bgcolor="white" text="black">
+<body>
 
 <!-- TOP LEFT X LOGO -->
 <a href="https://x.com/thishorsenoise" target="_blank" id="xLogo">
@@ -84,7 +90,6 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
     <tr>
         <td align="center" valign="middle" height="80" bgcolor="white">
             <h1 style="
-                font-family: 'Times New Roman', Times, serif;
                 font-weight: bold;
                 font-style: italic;
                 font-size: 60px;
@@ -102,11 +107,11 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
     <tr>
         <td align="center" valign="middle" height="30">
             <b>
-                <a href="#">HOME</a> | 
-                <a href="#">WORLD</a> | 
-                <a href="#">POLITICS</a> | 
-                <a href="#">BUSINESS</a> | 
-                <a href="#">TECH</a>
+                <a href="#" style="color:black;">HOME</a> | 
+                <a href="#" style="color:black;">WORLD</a> | 
+                <a href="#" style="color:black;">POLITICS</a> | 
+                <a href="#" style="color:black;">BUSINESS</a> | 
+                <a href="#" style="color:black;">TECH</a>
             </b>
         </td>
     </tr>
@@ -123,37 +128,49 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
                 <tr>
                     <!-- LEFT COLUMN -->
                     <td width="70%" valign="top" align="left">
-                        <b style="font-size:16pt; color:black; font-family:'Times New Roman', serif;">
-                            <a href="#">Nick Fuentes’s Strategy is Working</a>
+
+                        <!-- MAIN HEADLINE -->
+                        <b style="font-size:16pt; color:black;">
+                            <a href="#" style="color:black; text-transform:uppercase;">Nick Fuentes’s Strategy is Working</a>
                         </b><br>
+
+                        <!-- IMAGE -->
                         <a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/" target="_blank">
                             <img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" 
                                  alt="the atlantic NF image" width="300" height="200">
                         </a><br>
+
+                        <!-- SECONDARY HEADLINES -->
                         <b style="font-size:14pt; color:red;">
-                            <a href="#">SECONDARY STORY HEADLINE</a>
+                            <a href="#" style="color:red; text-transform:uppercase;">SECONDARY STORY HEADLINE</a>
                         </b><br>
                         <b style="font-size:14pt; color:black;">
-                            <a href="#">ANOTHER HEADLINE HERE</a>
+                            <a href="#" style="color:black; text-transform:uppercase;">ANOTHER HEADLINE HERE</a>
                         </b><br>
                         <b style="font-size:14pt; color:black;">
-                            <a href="#">YET ANOTHER HEADLINE</a>
+                            <a href="#" style="color:black; text-transform:uppercase;">YET ANOTHER HEADLINE</a>
                         </b>
+
                     </td>
 
                     <!-- RIGHT COLUMN -->
                     <td width="30%" valign="top" align="left" bgcolor="white">
+
                         <b style="font-size:14pt; color:black;">
-                            <a href="#">TOP STORIES</a>
+                            <a href="#" style="color:black; text-transform:uppercase;">TOP STORIES</a>
                         </b><br>
-                        <span style="color:red;"><a href="#">STORY 1 PLACEHOLDER</a></span><br>
-                        <span style="color:black;"><a href="#">STORY 2 PLACEHOLDER</a></span><br>
-                        <span style="color:red;"><a href="#">STORY 3 PLACEHOLDER</a></span><br>
-                        <span style="color:black;"><a href="#">STORY 4 PLACEHOLDER</a></span><br><br>
-                        <b style="font-size:14pt; color:black;"><a href="#">MORE NEWS</a></b><br>
-                        <span style="color:red;"><a href="#">STORY 5 PLACEHOLDER</a></span><br>
-                        <span style="color:black;"><a href="#">STORY 6 PLACEHOLDER</a></span><br>
-                        <span style="color:red;"><a href="#">STORY 7 PLACEHOLDER</a></span>
+                        <a href="#" style="color:red;">STORY 1 PLACEHOLDER</a><br>
+                        <a href="#" style="color:black;">STORY 2 PLACEHOLDER</a><br>
+                        <a href="#" style="color:red;">STORY 3 PLACEHOLDER</a><br>
+                        <a href="#" style="color:black;">STORY 4 PLACEHOLDER</a><br><br>
+
+                        <b style="font-size:14pt; color:black;">
+                            <a href="#" style="color:black; text-transform:uppercase;">MORE NEWS</a>
+                        </b><br>
+                        <a href="#" style="color:red;">STORY 5 PLACEHOLDER</a><br>
+                        <a href="#" style="color:black;">STORY 6 PLACEHOLDER</a><br>
+                        <a href="#" style="color:red;">STORY 7 PLACEHOLDER</a>
+
                     </td>
                 </tr>
             </table>
@@ -168,9 +185,7 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
     <!-- FOOTER -->
     <tr>
         <td align="center" height="40">
-            <span style="font-family:'Times New Roman', serif; font-size:10pt; color:black;">
-                &copy; 2026 HNN
-            </span>
+            <span style="font-size:10pt; color:black;">&copy; 2026 HNN</span>
         </td>
     </tr>
 
