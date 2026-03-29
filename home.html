@@ -12,35 +12,30 @@ body {
     margin: 0;
 }
 
+/* hover effect for logout link */
 .logout-link {
     color: red;
     text-decoration: none;
     font-size: 12pt;
-    transition: font-size 0.2s;
+    display: inline-block;
+    transition: transform 0.2s;
 }
 .logout-link:hover {
-    font-size: 14pt;
+    transform: scale(1.2);
 }
 
-.ye-link {
-    color: red;
+/* hover effect for Ye link and top stories */
+.ye-link, .story-link {
     text-decoration: none;
     font-size: 12pt;
-    transition: font-size 0.2s;
+    display: inline-block;
+    transition: transform 0.2s;
 }
-.ye-link:hover {
-    font-size: 14pt;
-}
-
-.story-link {
-    text-decoration: none;
-    font-size: 12pt;
-    transition: font-size 0.2s;
-}
-.story-link:hover {
-    font-size: 14pt;
+.ye-link:hover, .story-link:hover {
+    transform: scale(1.2);
 }
 
+/* X logo hover */
 #xLogo {
     position: fixed;
     top: 10px;
@@ -53,6 +48,7 @@ body {
     transform: scale(1.2);
 }
 
+/* general link styling */
 a {
     text-decoration: none;
 }
@@ -60,9 +56,9 @@ a {
 </head>
 <body>
 
+<!-- TOP LEFT X LOGO -->
 <a href="https://x.com/thishorsenoise" target="_blank" id="xLogo">
-    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" 
-         style="height:28px;">
+    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" style="height:28px;">
 </a>
 
 <script>
@@ -74,7 +70,8 @@ window.onload = function() {
 }
 </script>
 
-<div style="width:800px; margin:auto; text-align:right; padding:10px;">
+<!-- LOGOUT LINK TOP RIGHT -->
+<div style="width:100%; padding:10px; text-align:right;">
     <a href="#" id="logoutLink" class="logout-link">logout</a>
 </div>
 
@@ -86,6 +83,7 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
 });
 </script>
 
+<!-- MAIN TABLE -->
 <table width="800" align="center" cellpadding="0" cellspacing="0">
 
 <tr>
@@ -123,18 +121,18 @@ HORSENOISE
 
 <td width="70%" valign="top">
 
+<!-- FUENTES STORY -->
 <b style="font-size:16pt; text-transform:uppercase;">
 FUENTES PLAN COMING TO FRUTION????
 </b><br>
-
 <a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/" target="_blank">
 <img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" width="440" height="340">
 </a><br><br>
 
+<!-- CLAVICULAR STORY -->
 <b style="font-size:16pt; color:red; text-transform:uppercase;">
 CLAV RELEASED!  FLORIDA MOGGED!!!!!!!
 </b><br>
-
 <a href="https://www.cbsnews.com/miami/news/clavicular-arrested-battery-fort-lauderdale-braden-eric-peters/" target="_blank">
 <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/clavicularcbs2.PNG" width="440" height="340">
 </a><br>
