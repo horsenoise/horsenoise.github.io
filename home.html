@@ -26,9 +26,7 @@ a:visited {
     display: inline-block;
     transition: transform 0.2s;
 }
-.logout-link:hover {
-    transform: scale(1.2);
-}
+.logout-link:hover { transform: scale(1.2); }
 
 /* ye link */
 .ye-link, .ye-link:visited {
@@ -38,9 +36,7 @@ a:visited {
     display: inline-block;
     transition: transform 0.2s;
 }
-.ye-link:hover {
-    transform: scale(1.2);
-}
+.ye-link:hover { transform: scale(1.2); }
 
 /* right column stories */
 .story-link, .story-link:visited {
@@ -49,9 +45,7 @@ a:visited {
     display: inline-block;
     transition: transform 0.2s;
 }
-.story-link:hover {
-    transform: scale(1.1);
-}
+.story-link:hover { transform: scale(1.1); }
 
 /* X logo hover */
 #xLogo {
@@ -62,14 +56,10 @@ a:visited {
     display: inline-block;
     transition: transform 0.2s;
 }
-#xLogo:hover {
-    transform: scale(1.2);
-}
+#xLogo:hover { transform: scale(1.2); }
 
 /* general link reset */
-a {
-    text-decoration: none;
-}
+a { text-decoration: none; }
 </style>
 </head>
 <body>
@@ -97,7 +87,7 @@ a {
 <script>
 window.onload = function() {
     if(sessionStorage.getItem('loggedIn') !== 'true'){
-        alert("please login to continue");
+        alert("PLEASE LOGIN TO CONTINUE");
         window.location.href = "https://horsenoise.github.io";
     }
 }
@@ -151,7 +141,7 @@ HORSENOISE
 <!-- LEFT COLUMN -->
 <td width="70%" valign="top" style="border-right: 1px solid black; padding-right:10px;">
 
-<!-- NEW TOP STORY -->
+<!-- TOP STORIES (drudge style) -->
 <b style="font-size:16pt; color:red; text-transform:uppercase;">
 SABBATH OF FIFTH WEEK OF GREAT LENT
 </b><br>
@@ -159,17 +149,15 @@ SABBATH OF FIFTH WEEK OF GREAT LENT
 <img src="https://media.pravoslavie.ru/486494.b.jpg?mtime=1774609124" width="440" height="340">
 </a><br><br>
 
-<!-- FUENTES STORY -->
 <b style="font-size:16pt; text-transform:uppercase;">
-FUENTES PLAN COMING TO FRUTION????
+FUENTES PLAN TAKES SHAPE
 </b><br>
 <a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/" target="_blank">
 <img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" width="440" height="340">
 </a><br><br>
 
-<!-- CLAVICULAR STORY -->
 <b style="font-size:16pt; color:red; text-transform:uppercase;">
-CLAV RELEASED FROM JAIL - MOGS FL!!!!
+CLAV RELEASED FROM JAIL - MOGS FL!!!
 </b><br>
 <a href="https://www.cbsnews.com/miami/news/clavicular-arrested-battery-fort-lauderdale-braden-eric-peters/" target="_blank">
 <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/clavicularcbs2.PNG" width="440" height="340">
@@ -184,61 +172,67 @@ CLAV RELEASED FROM JAIL - MOGS FL!!!!
 <a href="#" style="color:black; text-transform:uppercase;">TOP STORIES</a>
 </b><br>
 
-<!-- YE STORY -->
 <a href="https://www.nme.com/news/music/kanye-wests-new-album-bully-released-on-streaming-services-after-youtube-livestream-debut-3937218" target="_blank" class="ye-link">
-Ye releases long awaited album 'Bully'
+YE DROPS NEW ALBUM 'BULLY'
 </a><br>
 
-<!-- STORY 2 -->
 <a href="https://orthodoxtimes.com/jerusalem-the-easter-message-of-the-church-leaders-what-they-say-about-the-war/" target="_blank" class="story-link" style="color:black;">
-Church leaders deliver Easter message on war
+CHURCH LEADERS ISSUE EASTER WARNING
 </a><br>
 
-<!-- STORY 3 -->
 <a href="https://www.npr.org/2026/03/28/nx-s1-5764275/cpac-2026" target="_blank" class="story-link" style="color:red;">
-CPAC 2026: Trump wing consolidates power
+CPAC 2026: TRUMP FACTION GROWS
 </a><br>
 
-<!-- STORY 4 -->
 <a href="https://www.politico.com/news/2026/03/28/iran-trump-maga-men-divide-cpac-00849378" target="_blank" class="story-link" style="color:black;">
-MAGA men clash over Iran policy at CPAC
+MAGA MEN CLASH OVER IRAN POLICY
 </a><br><br>
 
 <b style="font-size:14pt;">
 <a href="#" style="color:black; text-transform:uppercase;">MORE NEWS</a>
 </b><br>
 
-<!-- MORE NEWS (RSS) -->
+<!-- MORE NEWS (RSS: geopolitics, war, orthodox christianity) -->
 <div id="rss-news" style="font-size:12pt;"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rss-parser/3.12.0/rss-parser.min.js"></script>
 <script>
 const parser = new RSSParser();
-const feedUrl = 'https://www.reutersagency.com/feed/?best-topics=politics'; // your RSS feed here
+// combine multiple feeds into one array
+const feeds = [
+    'https://orthochristian.com/feed/', // orthodox christianity
+    'https://www.defense.gov/News/News-RSS/' // geopolitics / war
+];
 
 async function loadRSS() {
     try {
-        const CORS_PROXY = "https://api.allorigins.win/get?url=";
-        const feed = await parser.parseURL(CORS_PROXY + encodeURIComponent(feedUrl));
         const container = document.getElementById('rss-news');
         container.innerHTML = '';
-        let colorToggle = true; // red/black alternate
-
-        feed.items.slice(0, 20).forEach(item => {
-            const a = document.createElement('a');
-            a.href = item.link;
-            a.target = "_blank";
-            a.textContent = item.title.toUpperCase();
-            a.style.color = colorToggle ? 'red' : 'black';
-            a.style.display = 'block';
-            a.style.fontSize = '12pt';
-            a.style.textTransform = 'uppercase';
-            a.style.marginBottom = '3px';
-            container.appendChild(a);
-            colorToggle = !colorToggle;
-        });
-    } catch (err) {
+        let colorToggle = true;
+        for(const feedUrl of feeds){
+            const CORS_PROXY = "https://api.allorigins.win/get?url=";
+            const response = await fetch(CORS_PROXY + encodeURIComponent(feedUrl));
+            const data = await response.json();
+            const text = data.contents;
+            const feed = await parser.parseString(text);
+            
+            feed.items.slice(0, 10).forEach(item => { // 10 from each feed
+                const a = document.createElement('a');
+                a.href = item.link;
+                a.target = "_blank";
+                a.textContent = item.title.toUpperCase();
+                a.style.color = colorToggle ? 'red' : 'black';
+                a.style.display = 'block';
+                a.style.fontSize = '12pt';
+                a.style.textTransform = 'uppercase';
+                a.style.marginBottom = '3px';
+                container.appendChild(a);
+                colorToggle = !colorToggle;
+            });
+        }
+    } catch(err){
         console.error('RSS load failed', err);
+        document.getElementById('rss-news').textContent = 'COULD NOT LOAD NEWS.';
     }
 }
 
