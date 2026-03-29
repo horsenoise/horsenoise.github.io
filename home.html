@@ -5,52 +5,140 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
 <style>
+/* global font */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-color: white;
     color: black;
     margin: 0;
 }
-a:visited { color: inherit !important; }
-.logout-link, .logout-link:visited { color:red !important; text-decoration:none; font-size:12pt; display:inline-block; transition: transform 0.2s; }
-.logout-link:hover { transform: scale(1.2); }
-.ye-link, .ye-link:visited { color:red !important; text-decoration:none; font-size:12pt; display:inline-block; transition: transform 0.2s; }
-.ye-link:hover { transform: scale(1.2); }
-.story-link, .story-link:visited { text-decoration:none; font-size:12pt; display:inline-block; transition: transform 0.2s; }
-.story-link:hover { transform: scale(1.1); }
-#xLogo { position:fixed; top:10px; left:10px; z-index:9999; display:inline-block; transition: transform 0.2s; }
-#xLogo:hover { transform: scale(1.2); }
-a { text-decoration:none; }
+
+/* prevent visited links from changing color */
+a:visited {
+    color: inherit !important;
+}
+
+/* logout link */
+.logout-link, .logout-link:visited {
+    color: red !important;
+    text-decoration: none;
+    font-size: 12pt;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.logout-link:hover {
+    transform: scale(1.2);
+}
+
+/* ye link */
+.ye-link, .ye-link:visited {
+    color: red !important;
+    text-decoration: none;
+    font-size: 12pt;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.ye-link:hover {
+    transform: scale(1.2);
+}
+
+/* right column stories */
+.story-link, .story-link:visited {
+    text-decoration: none;
+    font-size: 12pt;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.story-link:hover {
+    transform: scale(1.1);
+}
+
+/* X logo hover */
+#xLogo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+#xLogo:hover {
+    transform: scale(1.2);
+}
+
+/* more news links hover effect */
+.more-news-link, .more-news-link:visited {
+    font-size: 12pt;
+    text-transform: uppercase;
+    display: block;
+    transition: transform 0.2s;
+}
+.more-news-link:hover {
+    transform: scale(1.1);
+}
+
+/* general link reset */
+a {
+    text-decoration: none;
+}
 </style>
 </head>
 <body>
 
-<!-- TOP LEFT X LOGO -->
+<!-- TOP LEFT X LOGO (fixed) -->
 <a href="https://x.com/thishorsenoise" target="_blank" id="xLogo">
-<img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" style="height:28px; width:auto;">
+    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" style="height:28px; width:auto;">
 </a>
 
-<!-- LOGOUT -->
-<a href="#" id="logoutLink" class="logout-link" style="position:fixed; top:10px; right:10px; z-index:9999; padding:5px 10px; background-color:white; border:1px solid red; border-radius:4px;">logout</a>
+<!-- LOGOUT BUTTON FIXED TOP-RIGHT -->
+<a href="#" id="logoutLink" class="logout-link" style="
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 4px;
+">
+    logout
+</a>
 
+<!-- PROTECT PAGE -->
 <script>
-window.onload=function(){if(sessionStorage.getItem('loggedIn')!=='true'){alert("PLEASE LOGIN TO CONTINUE"); window.location.href="https://horsenoise.github.io";}}
-document.getElementById('logoutLink').addEventListener('click',function(e){e.preventDefault(); sessionStorage.removeItem('loggedIn'); window.location.href="https://horsenoise.github.io";});
+window.onload = function() {
+    if(sessionStorage.getItem('loggedIn') !== 'true'){
+        alert("please login to continue");
+        window.location.href = "https://horsenoise.github.io";
+    }
+}
+document.getElementById('logoutLink').addEventListener('click', function(e){
+    e.preventDefault();
+    sessionStorage.removeItem('loggedIn');
+    window.location.href = "https://horsenoise.github.io";
+});
 </script>
 
+<!-- MAIN TABLE -->
 <table width="800" align="center" cellpadding="0" cellspacing="0">
+
+<!-- HORSENOISE LOGO -->
 <tr>
 <td align="center" height="100">
 <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" style="max-height:240px;">
 </td>
 </tr>
 
+<!-- HORSENOISE TEXT -->
 <tr>
 <td align="center" height="80">
-<h1 style="font-weight:bold; font-style:italic; font-size:60px; color:black; text-shadow:2px 2px 2px #888888; margin:0;">HORSENOISE</h1>
+<h1 style="font-weight:bold; font-style:italic; font-size:60px; color:black; text-shadow:2px 2px 2px #888888; margin:0;">
+HORSENOISE
+</h1>
 </td>
 </tr>
 
+<!-- TOP NAV LINKS -->
 <tr>
 <td align="center" height="30">
 <b>
@@ -65,68 +153,99 @@ document.getElementById('logoutLink').addEventListener('click',function(e){e.pre
 
 <tr><td height="1" bgcolor="black"></td></tr>
 
+<!-- MAIN CONTENT -->
 <tr>
 <td>
 <table width="100%" cellpadding="10">
 <tr>
 
 <!-- LEFT COLUMN -->
-<td width="70%" valign="top" style="border-right:1px solid black; padding-right:10px;">
-<b style="font-size:16pt; color:red; text-transform:uppercase;">SABBATH OF FIFTH WEEK OF GREAT LENT</b><br>
+<td width="70%" valign="top" style="border-right: 1px solid black; padding-right:10px;">
+
+<!-- NEW TOP STORY -->
+<b style="font-size:16pt; color:red; text-transform:uppercase;">
+SABBATH OF FIFTH WEEK OF GREAT LENT
+</b><br>
 <a href="https://orthochristian.com/176593.html" target="_blank">
 <img src="https://media.pravoslavie.ru/486494.b.jpg?mtime=1774609124" width="440" height="340">
 </a><br><br>
 
-<b style="font-size:16pt; text-transform:uppercase;">FUENTES PLAN TAKES SHAPE</b><br>
+<!-- FUENTES STORY -->
+<b style="font-size:16pt; text-transform:uppercase;">
+FUENTES PLAN COMING TO FRUTION????
+</b><br>
 <a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/" target="_blank">
 <img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" width="440" height="340">
 </a><br><br>
 
-<b style="font-size:16pt; color:red; text-transform:uppercase;">CLAV RELEASED FROM JAIL - MOGS FL!!!</b><br>
+<!-- CLAVICULAR STORY -->
+<b style="font-size:16pt; color:red; text-transform:uppercase;">
+CLAV RELEASED FROM JAIL - MOGS FL!!!
+</b><br>
 <a href="https://www.cbsnews.com/miami/news/clavicular-arrested-battery-fort-lauderdale-braden-eric-peters/" target="_blank">
 <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/clavicularcbs2.PNG" width="440" height="340">
 </a><br>
+
 </td>
 
 <!-- RIGHT COLUMN -->
 <td width="30%" valign="top" style="padding-left:10px;">
 
-<b style="font-size:14pt;"><a href="#" style="color:black;">TOP STORIES</a></b><br>
+<b style="font-size:14pt;">
+<a href="#" style="color:black; text-transform:uppercase;">TOP STORIES</a>
+</b><br>
 
-<a href="https://www.nme.com/news/music/kanye-wests-new-album-bully-released-on-streaming-services-after-youtube-livestream-debut-3937218" target="_blank" class="ye-link">YE DROPS NEW ALBUM 'BULLY'</a><br>
-<a href="https://orthodoxtimes.com/jerusalem-the-easter-message-of-the-church-leaders-what-they-say-about-the-war/" target="_blank" class="story-link" style="color:black;">CHURCH LEADERS ISSUE EASTER WARNING</a><br>
-<a href="https://www.npr.org/2026/03/28/nx-s1-5764275/cpac-2026" target="_blank" class="story-link" style="color:red;">CPAC 2026: TRUMP FACTION GROWS</a><br>
-<a href="https://www.politico.com/news/2026/03/28/iran-trump-maga-men-divide-cpac-00849378" target="_blank" class="story-link" style="color:black;">MAGA MEN CLASH OVER IRAN POLICY</a><br><br>
+<!-- YE STORY -->
+<a href="https://www.nme.com/news/music/kanye-wests-new-album-bully-released-on-streaming-services-after-youtube-livestream-debut-3937218" target="_blank" class="ye-link">
+Ye releases long awaited album 'Bully'
+</a><br>
 
-<b style="font-size:14pt;"><a href="#" style="color:black; text-transform:uppercase;">MORE NEWS</a></b><br>
+<!-- STORY 2 -->
+<a href="https://orthodoxtimes.com/jerusalem-the-easter-message-of-the-church-leaders-what-they-say-about-the-war/" target="_blank" class="story-link" style="color:black;">
+Church leaders deliver Easter message on war
+</a><br>
 
-<a href="https://www.aljazeera.com/news/2026/3/28/at-least-22-migrants-die-off-greece-after-6-days-at-sea" target="_blank" style="color:red; font-size:12pt; text-transform:uppercase;">22 MIGRANTS DIE OFF GREECE</a><br>
-<a href="https://apnews.com/article/miami-open-sabalenka-gauff-67bdf8b6058a9b721235c0d41d8d556d" target="_blank" style="color:black; font-size:12pt; text-transform:uppercase;">SABALENKA FACES GAUFF IN FINAL</a><br>
-<a href="https://www.aljazeera.com/news/2026/3/28/iran-warns-neighbours-not-to-let-enemies-run-the-war-from-their-land" target="_blank" style="color:red; font-size:12pt; text-transform:uppercase;">IRAN WARNS NEIGHBORS</a><br>
-<a href="https://www.bbc.com/news/world-middle-east-65012345" target="_blank" style="color:black; font-size:12pt; text-transform:uppercase;">ISRAEL STRIKES KILL 3 JOURNALISTS</a><br>
-<a href="https://www.reuters.com/world/middle-east/houthis-fire-israel-more-attacks-2026-03-28/" target="_blank" style="color:red; font-size:12pt; text-transform:uppercase;">HOUTHIS ATTACK ISRAEL</a><br>
-<a href="https://www.defense.gov/News/News-Stories/Article/Article/1234567/ukraine-signs-air-defense-deals/" target="_blank" style="color:black; font-size:12pt; text-transform:uppercase;">UKRAINE SIGNS AIR DEFENSE DEALS</a><br>
-<a href="https://www.aljazeera.com/news/2026/3/28/airstrikes-hit-tehran-university-homes" target="_blank" style="color:red; font-size:12pt; text-transform:uppercase;">AIRSTRIKES HIT TEHRAN UNIVERSITY</a><br>
-<a href="https://www.bbc.com/news/world-middle-east-65022345" target="_blank" style="color:black; font-size:12pt; text-transform:uppercase;">KURDS PUSH INTO IRAN FIGHT</a><br>
-<a href="https://www.rferl.org/a/dubai-horse-race/31728994.html" target="_blank" style="color:red; font-size:12pt; text-transform:uppercase;">HORSE RACE DRAWS CROWDS IN DUBAI</a><br>
-<a href="https://orthodoxtimes.com/quebec-island-mid-lent-celebrations/" target="_blank" style="color:black; font-size:12pt; text-transform:uppercase;">QUEBEC ISLAND CELEBRATES MID-LENT</a><br>
-<a href="https://www.reuters.com/world/europe/paris-bank-attack-2026-03-28/" target="_blank" style="color:red; font-size:12pt; text-transform:uppercase;">PARIS MAN ACCUSED BANK ATTACK</a><br>
-<a href="https://www.aljazeera.com/news/2026/3/28/pakistan-hosts-diplomats-on-iran-war" target="_blank" style="color:black; font-size:12pt; text-transform:uppercase;">PAKISTAN HOSTS DIPLOMATS</a><br>
-<a href="https://www.bbc.com/news/world-latin-america-65022346" target="_blank" style="color:red; font-size:12pt; text-transform:uppercase;">CASTRO HEIRS EMERGE IN CUBA</a><br>
-<a href="https://www.reuters.com/world/russia/russian-bakery-tax-struggle-2026-03-28/" target="_blank" style="color:black; font-size:12pt; text-transform:uppercase;">RUSSIAN BAKERY FIGHTS TAX HIKE</a><br>
+<!-- STORY 3 -->
+<a href="https://www.npr.org/2026/03/28/nx-s1-5764275/cpac-2026" target="_blank" class="story-link" style="color:red;">
+CPAC 2026: Trump wing consolidates power
+</a><br>
+
+<!-- STORY 4 -->
+<a href="https://www.politico.com/news/2026/03/28/iran-trump-maga-men-divide-cpac-00849378" target="_blank" class="story-link" style="color:black;">
+MAGA men clash over Iran policy at CPAC
+</a><br><br>
+
+<b style="font-size:14pt;">
+<a href="#" style="color:black; text-transform:uppercase;">MORE NEWS</a>
+</b><br>
+
+<!-- MORE NEWS LINKS -->
+<a href="https://www.aljazeera.com/news/2026/3/28/at-least-22-migrants-die-off-greece-after-6-days-at-sea" target="_blank" class="more-news-link" style="color:red;">22 MIGRANTS DIE OFF GREECE</a><br>
+<a href="https://apnews.com/article/miami-open-sabalenka-gauff-67bdf8b6058a9b721235c0d41d8d556d" target="_blank" class="more-news-link" style="color:black;">SABALENKA FACES GAUFF IN FINAL</a><br>
+<a href="https://www.aljazeera.com/news/2026/3/28/iran-warns-neighbours-not-to-let-enemies-run-the-war-from-their-land" target="_blank" class="more-news-link" style="color:red;">IRAN WARNS NEIGHBORS</a><br>
+<a href="https://www.bbc.com/news/world-middle-east-65012345" target="_blank" class="more-news-link" style="color:black;">ISRAEL STRIKES KILL 3 JOURNALISTS</a><br>
+<a href="https://www.theguardian.com/world/2026/mar/28/houthi-missiles-hit-israel" target="_blank" class="more-news-link" style="color:red;">HOUTHIS FIRE ON ISRAEL</a><br>
+<a href="https://www.reuters.com/world/ukraine-signs-air-defence-deals-2026-03-28/" target="_blank" class="more-news-link" style="color:black;">UKRAINE SIGNS AIR DEFENSE DEALS</a><br>
+<a href="https://www.bbc.com/news/world-middle-east-65012455" target="_blank" class="more-news-link" style="color:red;">AIRSTRIKES HIT TEHRAN UNIVERSITY</a><br>
+<a href="https://www.aljazeera.com/news/2026/3/28/kurdish-forces-join-iran-fight" target="_blank" class="more-news-link" style="color:black;">KURDS PUSH TO JOIN IRAN FIGHT</a><br>
+<a href="https://www.nytimes.com/2026/03/28/world/horse-race-dubai.html" target="_blank" class="more-news-link" style="color:red;">HORSE RACE GOES ON IN DUBAI</a><br>
 
 </td>
+
 </tr>
 </table>
 </td>
 </tr>
 
 <tr><td height="1" bgcolor="black"></td></tr>
+
+<!-- FOOTER -->
 <tr>
 <td align="center" height="40">
 <span style="font-size:10pt;">&copy; 2026 HNN</span>
 </td>
 </tr>
+
 </table>
 
 </body>
