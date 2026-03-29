@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
 <style>
-/* global font */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-color: white;
@@ -13,7 +12,6 @@ body {
     margin: 0;
 }
 
-/* logout link hover */
 .logout-link {
     color: red;
     text-decoration: none;
@@ -24,7 +22,6 @@ body {
     font-size: 14pt;
 }
 
-/* x logo hover */
 #xLogo {
     position: fixed;
     top: 10px;
@@ -37,7 +34,6 @@ body {
     transform: scale(1.2);
 }
 
-/* link styling */
 a {
     text-decoration: none;
 }
@@ -45,13 +41,11 @@ a {
 </head>
 <body>
 
-<!-- TOP LEFT X LOGO -->
 <a href="https://x.com/thishorsenoise" target="_blank" id="xLogo">
     <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" 
          alt="X Logo" style="height:28px; width:auto;">
 </a>
 
-<!-- PROTECT PAGE -->
 <script>
 window.onload = function() {
     if(sessionStorage.getItem('loggedIn') !== 'true'){
@@ -61,7 +55,6 @@ window.onload = function() {
 }
 </script>
 
-<!-- LOGOUT LINK -->
 <div style="width:800px; margin:auto; text-align:right; padding:10px;">
     <a href="#" id="logoutLink" class="logout-link">logout</a>
 </div>
@@ -74,135 +67,108 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
 });
 </script>
 
-<!-- MAIN TABLE -->
 <table width="800" align="center" border="0" cellpadding="0" cellspacing="0">
 
-    <!-- LOGO IMAGE -->
-    <tr>
-        <td align="center" valign="middle" height="100" bgcolor="white">
-            <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" 
-                 alt="HORSENOISE Logo" style="max-height:240px;">
-        </td>
-    </tr>
+<tr>
+    <td align="center" height="100">
+        <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" 
+             alt="HORSENOISE Logo" style="max-height:240px;">
+    </td>
+</tr>
 
-    <!-- HORSENOISE TEXT -->
-    <tr>
-        <td align="center" valign="middle" height="80" bgcolor="white">
-            <h1 style="
-                font-weight: bold;
-                font-style: italic;
-                font-size: 60px;
-                color: black;
-                text-shadow: 2px 2px 2px #888888;
-                margin: 0;
-                letter-spacing: 2px;
-            ">
-                HORSENOISE
-            </h1>
-        </td>
-    </tr>
+<tr>
+    <td align="center" height="80">
+        <h1 style="font-weight:bold; font-style:italic; font-size:60px; color:black; text-shadow:2px 2px 2px #888888; margin:0; letter-spacing:2px;">
+            HORSENOISE
+        </h1>
+    </td>
+</tr>
 
-    <!-- TOP NAV LINKS -->
-    <tr>
-        <td align="center" valign="middle" height="30">
-            <b>
-                <a href="#" style="color:black;">HOME</a> | 
-                <a href="#" style="color:black;">WORLD</a> | 
-                <a href="#" style="color:black;">POLITICS</a> | 
-                <a href="#" style="color:black;">BUSINESS</a> | 
-                <a href="#" style="color:black;">TECH</a>
-            </b>
-        </td>
-    </tr>
+<tr>
+    <td align="center" height="30">
+        <b>
+            <a href="#" style="color:black;">HOME</a> | 
+            <a href="#" style="color:black;">WORLD</a> | 
+            <a href="#" style="color:black;">POLITICS</a> | 
+            <a href="#" style="color:black;">BUSINESS</a> | 
+            <a href="#" style="color:black;">TECH</a>
+        </b>
+    </td>
+</tr>
 
-    <!-- HORIZONTAL LINE -->
-    <tr>
-        <td height="1" bgcolor="black"></td>
-    </tr>
+<tr><td height="1" bgcolor="black"></td></tr>
 
-    <!-- MAIN CONTENT -->
-    <tr>
-        <td>
-            <table width="100%" border="0" cellpadding="10" cellspacing="0">
-                <tr>
+<tr>
+<td>
+<table width="100%" cellpadding="10">
+<tr>
 
-                    <!-- LEFT COLUMN -->
-                    <td width="70%" valign="top" align="left">
+<td width="70%" valign="top">
 
-                        <!-- FUENTES STORY -->
-                        <b style="font-size:16pt; color:black;">
-                            <a href="#" style="color:black; text-transform:uppercase;">
-                                FUENTES PLAN COMING TO FRUTION????
-                            </a>
-                        </b><br>
+<!-- FUENTES (NO LINK) -->
+<b style="font-size:16pt; color:black; text-transform:uppercase;">
+    FUENTES PLAN COMING TO FRUTION????
+</b><br>
 
-                        <a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/" target="_blank">
-                            <img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" 
-                                 alt="fuentes image" width="440" height="340">
-                        </a><br><br>
+<a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/" target="_blank">
+    <img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" 
+         width="440" height="340">
+</a><br><br>
 
-                        <!-- CLAVICULAR STORY -->
-                        <b style="font-size:16pt; color:red;">
-                            <a href="https://www.cbsnews.com/miami/news/clavicular-arrested-battery-fort-lauderdale-braden-eric-peters/" target="_blank" style="color:red; text-transform:uppercase;">
-                                CLAV RELEASED FROM JAIL - MOGS FL
-                            </a>
-                        </b><br>
+<!-- CLAV (NO LINK, RED) -->
+<b style="font-size:16pt; color:red; text-transform:uppercase;">
+    CLAV RELEASED FROM JAIL - MOGS FL
+</b><br>
 
-                        <a href="https://www.cbsnews.com/miami/news/clavicular-arrested-battery-fort-lauderdale-braden-eric-peters/" target="_blank">
-                            <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/clavicularcbs.PNG"
-                                 alt="clavicular image"
-                                 width="440" height="340">
-                        </a><br>
+<a href="https://www.cbsnews.com/miami/news/clavicular-arrested-battery-fort-lauderdale-braden-eric-peters/" target="_blank">
+    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/clavicularcbs.PNG"
+         width="440" height="340">
+</a><br>
 
-                        <!-- SECONDARY HEADLINES -->
-                        <b style="font-size:14pt; color:red;">
-                            <a href="#" style="color:red; text-transform:uppercase;">SECONDARY STORY HEADLINE</a>
-                        </b><br>
-                        <b style="font-size:14pt; color:black;">
-                            <a href="#" style="color:black; text-transform:uppercase;">ANOTHER HEADLINE HERE</a>
-                        </b><br>
-                        <b style="font-size:14pt; color:black;">
-                            <a href="#" style="color:black; text-transform:uppercase;">YET ANOTHER HEADLINE</a>
-                        </b>
+<!-- SECONDARY -->
+<b style="font-size:14pt; color:red;">
+    <a href="#" style="color:red; text-transform:uppercase;">SECONDARY STORY HEADLINE</a>
+</b><br>
+<b style="font-size:14pt; color:black;">
+    <a href="#" style="color:black; text-transform:uppercase;">ANOTHER HEADLINE HERE</a>
+</b><br>
+<b style="font-size:14pt; color:black;">
+    <a href="#" style="color:black; text-transform:uppercase;">YET ANOTHER HEADLINE</a>
+</b>
 
-                    </td>
+</td>
 
-                    <!-- RIGHT COLUMN -->
-                    <td width="30%" valign="top" align="left">
+<td width="30%" valign="top">
 
-                        <b style="font-size:14pt; color:black;">
-                            <a href="#" style="color:black; text-transform:uppercase;">TOP STORIES</a>
-                        </b><br>
-                        <a href="#" style="color:red;">STORY 1 PLACEHOLDER</a><br>
-                        <a href="#" style="color:black;">STORY 2 PLACEHOLDER</a><br>
-                        <a href="#" style="color:red;">STORY 3 PLACEHOLDER</a><br>
-                        <a href="#" style="color:black;">STORY 4 PLACEHOLDER</a><br><br>
+<b style="font-size:14pt;">
+    <a href="#" style="color:black; text-transform:uppercase;">TOP STORIES</a>
+</b><br>
+<a href="#" style="color:red;">STORY 1 PLACEHOLDER</a><br>
+<a href="#" style="color:black;">STORY 2 PLACEHOLDER</a><br>
+<a href="#" style="color:red;">STORY 3 PLACEHOLDER</a><br>
+<a href="#" style="color:black;">STORY 4 PLACEHOLDER</a><br><br>
 
-                        <b style="font-size:14pt; color:black;">
-                            <a href="#" style="color:black; text-transform:uppercase;">MORE NEWS</a>
-                        </b><br>
-                        <a href="#" style="color:red;">STORY 5 PLACEHOLDER</a><br>
-                        <a href="#" style="color:black;">STORY 6 PLACEHOLDER</a><br>
-                        <a href="#" style="color:red;">STORY 7 PLACEHOLDER</a>
+<b style="font-size:14pt;">
+    <a href="#" style="color:black; text-transform:uppercase;">MORE NEWS</a>
+</b><br>
+<a href="#" style="color:red;">STORY 5 PLACEHOLDER</a><br>
+<a href="#" style="color:black;">STORY 6 PLACEHOLDER</a><br>
+<a href="#" style="color:red;">STORY 7 PLACEHOLDER</a>
 
-                    </td>
+</td>
 
-                </tr>
-            </table>
-        </td>
-    </tr>
+</tr>
+</table>
+</td>
+</tr>
 
-    <!-- HORIZONTAL LINE -->
-    <tr>
-        <td height="1" bgcolor="black"></td>
-    </tr>
+<tr><td height="1" bgcolor="black"></td></tr>
 
-    <!-- FOOTER -->
-    <tr>
-        <td align="center" height="40">
-            <span style="font-size:10pt; color:black;">&copy; 2026 HNN</span>
-        </td>
-    </tr>
+<tr>
+<td align="center" height="40">
+    <span style="font-size:10pt;">&copy; 2026 HNN</span>
+</td>
+</tr>
 
 </table>
 
