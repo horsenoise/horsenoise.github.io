@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>horsenoise</title>
 <style>
+/* global font */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-color: white;
@@ -12,9 +13,14 @@ body {
     margin: 0;
 }
 
-/* hover effect for logout link */
-.logout-link {
-    color: red;
+/* prevent visited links from changing color */
+a:visited {
+    color: inherit !important;
+}
+
+/* logout link */
+.logout-link, .logout-link:visited {
+    color: red !important;
     text-decoration: none;
     font-size: 12pt;
     display: inline-block;
@@ -24,15 +30,27 @@ body {
     transform: scale(1.2);
 }
 
-/* hover effect for Ye link and top stories */
-.ye-link, .story-link {
+/* ye link */
+.ye-link, .ye-link:visited {
+    color: red !important;
     text-decoration: none;
     font-size: 12pt;
     display: inline-block;
     transition: transform 0.2s;
 }
-.ye-link:hover, .story-link:hover {
+.ye-link:hover {
     transform: scale(1.2);
+}
+
+/* right column stories */
+.story-link, .story-link:visited {
+    text-decoration: none;
+    font-size: 12pt;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.story-link:hover {
+    transform: scale(1.1);
 }
 
 /* X logo hover */
@@ -48,7 +66,7 @@ body {
     transform: scale(1.2);
 }
 
-/* general link styling */
+/* general link reset */
 a {
     text-decoration: none;
 }
@@ -56,11 +74,17 @@ a {
 </head>
 <body>
 
-<!-- TOP LEFT X LOGO -->
+<!-- TOP LEFT X LOGO (fixed) -->
 <a href="https://x.com/thishorsenoise" target="_blank" id="xLogo">
-    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" style="height:28px;">
+    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" style="height:28px; width:auto;">
 </a>
 
+<!-- LOGOUT LINK TOP RIGHT (scrolls with page) -->
+<div style="width:100%; text-align:right; padding:10px 20px 10px 10px;">
+    <a href="#" id="logoutLink" class="logout-link">logout</a>
+</div>
+
+<!-- PROTECT PAGE -->
 <script>
 window.onload = function() {
     if(sessionStorage.getItem('loggedIn') !== 'true'){
@@ -68,14 +92,6 @@ window.onload = function() {
         window.location.href = "https://horsenoise.github.io";
     }
 }
-</script>
-
-<!-- LOGOUT LINK TOP RIGHT -->
-<div style="width:100%; padding:10px 20px 10px 10px; text-align:right;">
-    <a href="#" id="logoutLink" class="logout-link">logout</a>
-</div>
-
-<script>
 document.getElementById('logoutLink').addEventListener('click', function(e){
     e.preventDefault();
     sessionStorage.removeItem('loggedIn');
@@ -86,12 +102,14 @@ document.getElementById('logoutLink').addEventListener('click', function(e){
 <!-- MAIN TABLE -->
 <table width="800" align="center" cellpadding="0" cellspacing="0">
 
+<!-- HORSENOISE LOGO -->
 <tr>
 <td align="center" height="100">
 <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" style="max-height:240px;">
 </td>
 </tr>
 
+<!-- HORSENOISE TEXT -->
 <tr>
 <td align="center" height="80">
 <h1 style="font-weight:bold; font-style:italic; font-size:60px; color:black; text-shadow:2px 2px 2px #888888; margin:0;">
@@ -100,6 +118,7 @@ HORSENOISE
 </td>
 </tr>
 
+<!-- TOP NAV LINKS -->
 <tr>
 <td align="center" height="30">
 <b>
@@ -114,11 +133,13 @@ HORSENOISE
 
 <tr><td height="1" bgcolor="black"></td></tr>
 
+<!-- MAIN CONTENT -->
 <tr>
 <td>
 <table width="100%" cellpadding="10">
 <tr>
 
+<!-- LEFT COLUMN -->
 <td width="70%" valign="top">
 
 <!-- FUENTES STORY -->
@@ -131,12 +152,13 @@ FUENTES PLAN COMING TO FRUTION????
 
 <!-- CLAVICULAR STORY -->
 <b style="font-size:16pt; color:red; text-transform:uppercase;">
-CLAV RELEASED!  FLORIDA MOGGED!!!!!!!
+CLAV RELEASED FROM JAIL - MOGS FL
 </b><br>
 <a href="https://www.cbsnews.com/miami/news/clavicular-arrested-battery-fort-lauderdale-braden-eric-peters/" target="_blank">
-<img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/clavicularcbs2.PNG" width="440" height="340">
+<img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/clavicularcbs.PNG" width="440" height="340">
 </a><br>
 
+<!-- SECONDARY HEADLINES -->
 <b style="font-size:14pt; color:red;">
 <a href="#" style="color:red; text-transform:uppercase;">SECONDARY STORY HEADLINE</a>
 </b><br>
@@ -149,26 +171,27 @@ CLAV RELEASED!  FLORIDA MOGGED!!!!!!!
 
 </td>
 
+<!-- RIGHT COLUMN -->
 <td width="30%" valign="top">
 
 <b style="font-size:14pt;">
 <a href="#" style="color:black; text-transform:uppercase;">TOP STORIES</a>
 </b><br>
 
-<a href="https://www.nme.com/news/music/kanye-wests-new-album-bully-released-on-streaming-services-after-youtube-livestream-debut-3937218" target="_blank" class="ye-link style="color:red;">
-Ye drops ‘Bully’ LP
+<a href="https://www.nme.com/news/music/kanye-wests-new-album-bully-released-on-streaming-services-after-youtube-livestream-debut-3937218" target="_blank" class="ye-link">
+Ye releases long awaited album 'Bully'
 </a><br>
 
 <a href="https://orthodoxtimes.com/jerusalem-the-easter-message-of-the-church-leaders-what-they-say-about-the-war/" target="_blank" class="story-link" style="color:black;">
-Churches warn of war fallout in Easter message
+Church leaders deliver Easter message on war
 </a><br>
 
 <a href="https://www.npr.org/2026/03/28/nx-s1-5764275/cpac-2026" target="_blank" class="story-link" style="color:red;">
-CPAC 2026: Trump wing tightens grip
+CPAC 2026: Trump wing consolidates power
 </a><br>
 
 <a href="https://www.politico.com/news/2026/03/28/iran-trump-maga-men-divide-cpac-00849378" target="_blank" class="story-link" style="color:black;">
-MAGA split grows over Iran stance
+MAGA men clash over Iran policy at CPAC
 </a><br><br>
 
 <b style="font-size:14pt;">
@@ -187,6 +210,7 @@ MAGA split grows over Iran stance
 
 <tr><td height="1" bgcolor="black"></td></tr>
 
+<!-- FOOTER -->
 <tr>
 <td align="center" height="40">
 <span style="font-size:10pt;">&copy; 2026 HNN</span>
