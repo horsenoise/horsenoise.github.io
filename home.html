@@ -12,21 +12,33 @@ body {
     margin: 0;
 }
 
-.logout-link, .link-main, .link-top, .link-more {
+.logout-link {
+    color: red;
     text-decoration: none;
     font-size: 12pt;
-    color: black;
     transition: font-size 0.2s;
 }
-.logout-link:hover, .link-main:hover, .link-top:hover, .link-more:hover {
+.logout-link:hover {
     font-size: 14pt;
 }
 
-.red {
+.ye-link {
     color: red;
+    text-decoration: none;
+    font-size: 12pt;
+    transition: font-size 0.2s;
 }
-.black {
-    color: black;
+.ye-link:hover {
+    font-size: 14pt;
+}
+
+.story-link {
+    text-decoration: none;
+    font-size: 12pt;
+    transition: font-size 0.2s;
+}
+.story-link:hover {
+    font-size: 14pt;
 }
 
 #xLogo {
@@ -34,39 +46,57 @@ body {
     top: 10px;
     left: 10px;
     z-index: 9999;
+    display: inline-block;
     transition: transform 0.2s;
 }
 #xLogo:hover {
     transform: scale(1.2);
 }
 
-table {
-    border-collapse: collapse;
+a {
+    text-decoration: none;
 }
 </style>
 </head>
 <body>
 
-<a href="#" id="xLogo">
+<a href="https://x.com/thishorsenoise" target="_blank" id="xLogo">
     <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/xlogo.png" 
-         style="height:28px;" alt="logo">
+         style="height:28px;">
 </a>
 
+<script>
+window.onload = function() {
+    if(sessionStorage.getItem('loggedIn') !== 'true'){
+        alert("please login to continue");
+        window.location.href = "https://horsenoise.github.io";
+    }
+}
+</script>
+
 <div style="width:800px; margin:auto; text-align:right; padding:10px;">
-    <a href="#" id="logoutLink" class="logout-link red">logout</a>
+    <a href="#" id="logoutLink" class="logout-link">logout</a>
 </div>
 
-<table width="800" align="center">
+<script>
+document.getElementById('logoutLink').addEventListener('click', function(e){
+    e.preventDefault();
+    sessionStorage.removeItem('loggedIn');
+    window.location.href = "https://horsenoise.github.io";
+});
+</script>
+
+<table width="800" align="center" cellpadding="0" cellspacing="0">
 
 <tr>
 <td align="center" height="100">
-    <img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" style="max-height:240px;" alt="logo">
+<img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/templogo.png" style="max-height:240px;">
 </td>
 </tr>
 
 <tr>
 <td align="center" height="80">
-<h1 style="font-weight:bold; font-style:italic; font-size:60px; text-shadow:2px 2px 2px #888;">
+<h1 style="font-weight:bold; font-style:italic; font-size:60px; color:black; text-shadow:2px 2px 2px #888888; margin:0;">
 HORSENOISE
 </h1>
 </td>
@@ -75,11 +105,11 @@ HORSENOISE
 <tr>
 <td align="center" height="30">
 <b>
-    <a href="#" class="link-main">HOME</a> | 
-    <a href="#" class="link-main">WORLD</a> | 
-    <a href="#" class="link-main">POLITICS</a> | 
-    <a href="#" class="link-main">BUSINESS</a> | 
-    <a href="#" class="link-main">TECH</a>
+<a href="#" style="color:black;">HOME</a> | 
+<a href="#" style="color:black;">WORLD</a> | 
+<a href="#" style="color:black;">POLITICS</a> | 
+<a href="#" style="color:black;">BUSINESS</a> | 
+<a href="#" style="color:black;">TECH</a>
 </b>
 </td>
 </tr>
@@ -94,31 +124,29 @@ HORSENOISE
 <td width="70%" valign="top">
 
 <b style="font-size:16pt; text-transform:uppercase;">
-MAIN HEADLINE HERE
+FUENTES PLAN COMING TO FRUTION????
 </b><br>
 
-<a href="URL_HERE" target="_blank">
-    <img src="IMAGE_URL_HERE" width="440" height="340" alt="main story">
+<a href="https://www.theatlantic.com/ideas/2026/03/nick-fuentes-leftist-clips/686485/" target="_blank">
+<img src="https://cdn.theatlantic.com/thumbor/fQWCim6qizvI91CPlznZK2evQCE=/0x0:2880x1620/976x549/media/img/mt/2026/03/20260224_fuentes_2/original.jpg" width="440" height="340">
 </a><br><br>
 
-<b style="font-size:16pt;" class="red">
-SECOND BIG HEADLINE
+<b style="font-size:16pt; color:red; text-transform:uppercase;">
+CLAV RELEASED FROM JAIL - MOGS FL
 </b><br>
 
-<a href="URL_HERE" target="_blank">
-    <img src="IMAGE_URL_HERE" width="440" height="340" alt="secondary story">
-</a><br><br>
+<a href="https://www.cbsnews.com/miami/news/clavicular-arrested-battery-fort-lauderdale-braden-eric-peters/" target="_blank">
+<img src="https://raw.githubusercontent.com/horsenoise/horsenoise.github.io/refs/heads/master/clavicularcbs.PNG" width="440" height="340">
+</a><br>
 
-<b style="font-size:14pt;" class="red">
-<a href="URL_HERE" target="_blank" class="link-main">STORY HEADLINE 3</a>
+<b style="font-size:14pt; color:red;">
+<a href="#" style="color:red; text-transform:uppercase;">SECONDARY STORY HEADLINE</a>
 </b><br>
-
 <b style="font-size:14pt;">
-<a href="URL_HERE" target="_blank" class="link-main">STORY HEADLINE 4</a>
+<a href="#" style="color:black; text-transform:uppercase;">ANOTHER HEADLINE HERE</a>
 </b><br>
-
 <b style="font-size:14pt;">
-<a href="URL_HERE" target="_blank" class="link-main">STORY HEADLINE 5</a>
+<a href="#" style="color:black; text-transform:uppercase;">YET ANOTHER HEADLINE</a>
 </b>
 
 </td>
@@ -126,21 +154,31 @@ SECOND BIG HEADLINE
 <td width="30%" valign="top">
 
 <b style="font-size:14pt;">
-<a href="#" class="link-top">TOP STORIES</a>
+<a href="#" style="color:black; text-transform:uppercase;">TOP STORIES</a>
 </b><br>
 
-<a href="URL_HERE" target="_blank" class="link-top red">Top Story 1</a><br>
-<a href="URL_HERE" target="_blank" class="link-top">Top Story 2</a><br>
-<a href="URL_HERE" target="_blank" class="link-top red">Top Story 3</a><br>
-<a href="URL_HERE" target="_blank" class="link-top">Top Story 4</a><br><br>
+<a href="https://www.nme.com/news/music/kanye-wests-new-album-bully-released-on-streaming-services-after-youtube-livestream-debut-3937218" target="_blank" class="ye-link">
+Ye drops ‘Bully’ LP
+</a><br>
+
+<a href="https://orthodoxtimes.com/jerusalem-the-easter-message-of-the-church-leaders-what-they-say-about-the-war/" target="_blank" class="story-link" style="color:black;">
+Churches warn of war fallout in Easter message
+</a><br>
+
+<a href="https://www.npr.org/2026/03/28/nx-s1-5764275/cpac-2026" target="_blank" class="story-link" style="color:red;">
+CPAC 2026: Trump wing tightens grip
+</a><br>
+
+<a href="https://www.politico.com/news/2026/03/28/iran-trump-maga-men-divide-cpac-00849378" target="_blank" class="story-link" style="color:red;">
+MAGA split grows over Iran stance
+</a><br><br>
 
 <b style="font-size:14pt;">
-<a href="#" class="link-top">MORE NEWS</a>
+<a href="#" style="color:black; text-transform:uppercase;">MORE NEWS</a>
 </b><br>
-
-<a href="URL_H5" target="_blank" class="link-more red">story 5 headline</a><br>
-<a href="URL_H6" target="_blank" class="link-more">story 6 headline</a><br>
-<a href="URL_H7" target="_blank" class="link-more red">story 7 headline</a>
+<a href="#" style="color:red;">STORY 5 PLACEHOLDER</a><br>
+<a href="#" style="color:black;">STORY 6 PLACEHOLDER</a><br>
+<a href="#" style="color:red;">STORY 7 PLACEHOLDER</a>
 
 </td>
 
@@ -158,21 +196,6 @@ SECOND BIG HEADLINE
 </tr>
 
 </table>
-
-<script>
-window.onload = function() {
-    if (sessionStorage.getItem('loggedIn') !== 'true') {
-        alert("please login to continue");
-        window.location.href = "https://horsenoise.github.io";
-    }
-}
-
-document.getElementById('logoutLink').addEventListener('click', function(e){
-    e.preventDefault();
-    sessionStorage.removeItem('loggedIn');
-    window.location.href = "https://horsenoise.github.io";
-});
-</script>
 
 </body>
 </html>
